@@ -1,0 +1,7 @@
+.taskbar-icon {
+  @apply size-9 relative before:absolute hover:before:size-12 hover:before:inset-0;
+}
+
+.taskbar-icon::before {
+  content: "";
+}
