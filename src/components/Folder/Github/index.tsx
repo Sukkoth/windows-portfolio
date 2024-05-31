@@ -5,9 +5,12 @@ import Content from "./Content";
 function Github() {
   return (
     <Modal>
-      <Modal.Button type='TOGGLER' id='github' close>
+      <Modal.Button type='TOGGLER' id='github'>
         <div>
-          <TaskbarItem imgUrl='https://img.icons8.com/?size=120&id=AZOZNnY73haj&format=png&color=000000' />
+          <TaskbarItem
+            id='github'
+            imgUrl='https://img.icons8.com/?size=120&id=AZOZNnY73haj&format=png&color=000000'
+          />
         </div>
       </Modal.Button>
       <Modal.Content>

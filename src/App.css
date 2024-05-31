@@ -1,3 +1,48 @@
 .modal-icons {
   @apply size-9 hover:bg-stone-600 p-3 object-contain;
 }
+
+/* TODO task bar on hover is glitching */
+.stars-cover {
+  background-image: url("/assets/stars.jpg");
+  background-size: contain;
+}
+
+.repo-item {
+  width: 300px;
+  height: 400px;
+  border-radius: 20px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.repo-item:hover::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 600px;
+  left: 75px;
+  top: -100px;
+  background-image: linear-gradient(#ff0000, #0000ff);
+  animation: spiral 10s linear infinite;
+}
+
+@keyframes spiral {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(3600deg);
+  }
+}
+
+.repo-item:hover::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background-color: #000019;
+  border-radius: 10px;
+}

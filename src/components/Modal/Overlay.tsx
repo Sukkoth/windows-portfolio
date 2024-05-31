@@ -15,9 +15,9 @@ function Overlay({
     <div className='fixed inset-x-0 top-0 bottom-[53px] backdrop-blur-lg center-all z-50'>
       <div
         ref={handler}
-        className='dark:bg-shade-300 drop-shadow-2xl border  border-gray-700 h-full overflow-y-auto'
+        className='dark:bg-shade-300 drop-shadow-2xl border border-gray-700 h-full overflow-y-hidden'
       >
-        <div className='overflow-x-auto p-2'>{children}</div>
+        {children}
       </div>
     </div>
   );

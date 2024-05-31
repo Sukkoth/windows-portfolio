@@ -11,7 +11,7 @@ function FolderView({ children, id }: Props) {
 
   return (
     <div
-      className={`text-white fixed top-0 left-0 right-0 bottom-14 bg-stone-900 z-50  backdrop:shadow-2xl min-h-full ${
+      className={`text-white fixed top-0 left-0 right-0 bg-stone-900 z-50 backdrop:shadow-2xl h-full ${
         activeTab === id ? "text-green-500" : ""
       }`}
     >
@@ -36,7 +36,7 @@ function FolderView({ children, id }: Props) {
           </Modal.Button>
         </div>
       </div>
-      <div id='content' className='p-5'>
+      <div id='content' className='overflow-hidden h-full'>
         {children}
       </div>
     </div>

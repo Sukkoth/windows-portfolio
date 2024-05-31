@@ -4,7 +4,7 @@ import TaskbarItem from "./TaskbarItem";
 
 function ItemsList() {
   return (
-    <div className='flex justify-between items-center gap-4'>
+    <div className='flex justify-between items-center gap-4 z-50'>
       <TaskbarItem
         id='start'
         imgUrl='https://img.icons8.com/?size=100&id=TuXN3JNUBGOT&format=png&color=000000'
