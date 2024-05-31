@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 //DEFINE CONTEXT
 export const TabContext = createContext<{
@@ -18,10 +18,6 @@ function TabProvider({ children }: Props) {
   function toggleTab(setOpen: string | null) {
     setActiveTab(setOpen);
   }
-
-  useEffect(() => {
-    console.log("🚀 ~ toggleTab ~ activeTab", activeTab);
-  }, [activeTab]);
 
   return (
     <TabContext.Provider

@@ -1,11 +1,8 @@
-import { useTab } from "@/Provider/TabProvider";
 import Modal from "../../Modal";
 import TaskbarItem from "../../Taskbar/TaskbarItem";
 import Content from "./Content";
 
 function Projects() {
-  const { activeTab } = useTab();
-  console.log("🚀 ~ Projects ~ activeTab:", activeTab);
   return (
     <Modal>
       <Modal.Button type='TOGGLER' id='projects'>
