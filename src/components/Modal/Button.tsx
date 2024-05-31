@@ -1,10 +1,12 @@
 import { cloneElement, useContext } from "react";
 import { ModalContext } from ".";
+import { useTab } from "@/Provider/TabProvider";
 
 type TOGGLER_BUTTON = {
   type: "TOGGLER";
   children: React.ReactElement;
   className?: string;
+  id?: string;
 };
 
 type CLOSE_BUTTON = {
@@ -25,11 +27,18 @@ type ButtonProps = TOGGLER_BUTTON | CLOSE_BUTTON | CONFIRM_BUTTON;
 
 export default function Button(props: ButtonProps) {
   const { toggleModal } = useContext(ModalContext);
+  const { toggleTab, activeTab } = useTab();
 
   //toggles the modal, the user has to pass a child
   if (props.type === "TOGGLER") {
     const cloned = cloneElement(props.children, {
-      onClick: () => toggleModal(true),
+      onClick: () => {
+        toggleTab(props.id === undefined ? null : props.id);
+        toggleModal(true);
+      },
+      className: `relative after:w-[15px] after:h-[4px] after:rounded-lg after:bg-orange-500 after:left-[8.5px] after:absolute ${
+        activeTab === props.id ? "after:block" : "after:hidden"
+      }`,
     });
 
     return cloned;
@@ -41,7 +50,10 @@ export default function Button(props: ButtonProps) {
 
     return children ? (
       cloneElement(children, {
-        onClick: () => toggleModal(),
+        onClick: () => {
+          toggleTab(null);
+          toggleModal();
+        },
       })
     ) : (
       <button
