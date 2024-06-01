@@ -13,8 +13,6 @@
   height: 400px;
   border-radius: 20px;
   display: grid;
-  justify-content: center;
-  align-content: center;
   position: relative;
   overflow: hidden;
 }
@@ -43,6 +41,6 @@
   content: "";
   position: absolute;
   inset: 2px;
-  background-color: #000019;
+  background-color: #04042c;
   border-radius: 10px;
 }

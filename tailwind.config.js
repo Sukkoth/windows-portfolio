@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         anurati: ["Anurati", "sans-serif"],
         "open-sans": ["Open Sans", "sans-serif"],
+        dmSans: ["DM Sans", "sans-serif"],
       },
     },
   },

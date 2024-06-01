@@ -11,7 +11,7 @@ function FolderView({ children, id }: Props) {
 
   return (
     <div
-      className={`text-white fixed top-0 left-0 right-0 bg-stone-900 z-50 backdrop:shadow-2xl h-full ${
+      className={`text-white fixed top-0 left-0 right-0 z-50 bg-[#0402157f] backdrop:shadow-3xl h-full ${
         activeTab === id ? "text-green-500" : ""
       }`}
     >
