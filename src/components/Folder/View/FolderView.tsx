@@ -1,5 +1,6 @@
 import { useTab } from "@/Provider/TabProvider";
 import Modal from "@/components/Modal";
+import { useEffect, useState } from "react";
 
 type Props = {
   children: React.ReactNode;
@@ -8,10 +9,19 @@ type Props = {
 
 function FolderView({ children, id }: Props) {
   const { activeTab } = useTab();
+  const [maxView, setMaxView] = useState<boolean>(
+    JSON.parse(localStorage.getItem("maxView") || "true")
+  );
+
+  useEffect(() => {
+    localStorage.setItem("maxView", JSON.stringify(maxView));
+  }, [maxView]);
 
   return (
     <div
-      className={`text-white fixed top-0 left-0 right-0 z-50 bg-[#0402157f] backdrop:shadow-3xl h-full ${
+      className={`${
+        !maxView ? "scale-75" : ""
+      } text-white fixed top-0 left-0 right-0 z-50 bg-[#0402157f] backdrop:shadow-3xl h-full ${
         activeTab === id ? "text-green-500" : ""
       }`}
     >
@@ -21,6 +31,7 @@ function FolderView({ children, id }: Props) {
             className='modal-icons'
             src='https://img.icons8.com/?size=100&id=98023&format=png&color=ffffff'
             alt=''
+            onClick={() => setMaxView((prev) => !prev)}
           />
           <Modal.Button type='CLOSE'>
             <img
@@ -31,7 +42,10 @@ function FolderView({ children, id }: Props) {
           </Modal.Button>
         </div>
       </div>
-      <div id='content' className='overflow-hidden h-full'>
+      <div
+        id='content'
+        className='overflow-hidden h-[90.5dvh] backdrop-blur-3xl'
+      >
         {children}
       </div>
     </div>

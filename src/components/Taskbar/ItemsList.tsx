@@ -1,5 +1,6 @@
 import Github from "../Folder/Github";
 import Projects from "../Folder/Projects/Projects";
+import Weather from "../Folder/Weather";
 import TaskbarItem from "./TaskbarItem";
 
 function ItemsList() {
@@ -11,6 +12,7 @@ function ItemsList() {
       />
       <Projects />
       <Github />
+      <Weather />
       <TaskbarItem
         id='linkedin'
         imgUrl='https://img.icons8.com/?size=100&id=xuvGCOXi8Wyg&format=png&color=000000'
