@@ -19,11 +19,11 @@ function RepoItem({ repo }: { repo: Repository }) {
             {repo.name}
           </h1>
 
-          <p className='text-sm text-gray-600'>
+          <p className='text-sm text-gray-500'>
             <span>Created at: </span>
             {new Date(repo.updated_at).toLocaleDateString()}
           </p>
-          <p className='text-sm text-gray-600'>
+          <p className='text-sm text-gray-500'>
             <span>Last Updated: </span>
             {new Date(repo.updated_at).toLocaleDateString()}
           </p>
