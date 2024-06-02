@@ -28,14 +28,14 @@ function Network() {
   return (
     <>
       <div
-        className={`flex relative before:absolute before:content-["🚫"] before:bottom-1 before:-right-1 before:text-sm  ${
+        className={`flex relative overflow-hidden before:absolute before:content-["🚫"] before:bottom-1 before:-right-1 before:text-sm  ${
           !onlineStatus ? "before:block" : "before:hidden"
         }`}
-        style={{
-          transform: "scaleY(-1)",
-        }}
+        // style={{
+        //   transform: "scaleY(-1)",
+        // }}
       >
-        <div
+        {/* <div
           className={`w-[2px] mr-[2px] h-[3px] ${
             onlineStatus ? "bg-white" : "bg-stone-700"
           }`}
@@ -59,7 +59,12 @@ function Network() {
           className={`w-[2px] mr-[2px] h-[15px] ${
             onlineStatus ? "bg-white" : "bg-stone-700"
           }`}
-        ></div>
+        ></div> */}
+        <img
+          src='https://img.icons8.com/?size=100&id=16109&format=png&color=ffffff'
+          alt=''
+          className='size-5'
+        />
       </div>
     </>
   );

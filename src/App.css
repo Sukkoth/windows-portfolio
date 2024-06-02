@@ -44,3 +44,10 @@
   background-color: #04042c;
   border-radius: 10px;
 }
+
+.wifi-item {
+  top: 100%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+}

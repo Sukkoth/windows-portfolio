@@ -1,5 +1,5 @@
 import Github from "../Folder/Github";
-import Projects from "../Folder/Projects/Projects";
+import Projects from "../Folder/Projects";
 import Weather from "../Folder/Weather";
 import TaskbarItem from "./TaskbarItem";
 
