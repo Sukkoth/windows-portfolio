@@ -19,11 +19,6 @@ function FolderView({ children, id }: Props) {
         <div className='flex items-center gap-2 float-end pl-3'>
           <img
             className='modal-icons'
-            src='https://img.icons8.com/?size=100&id=8193&format=png&color=ffffff'
-            alt=''
-          />
-          <img
-            className='modal-icons'
             src='https://img.icons8.com/?size=100&id=98023&format=png&color=ffffff'
             alt=''
           />
