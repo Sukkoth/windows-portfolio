@@ -42,10 +42,7 @@ function FolderView({ children, id }: Props) {
           </Modal.Button>
         </div>
       </div>
-      <div
-        id='content'
-        className='overflow-hidden h-[90.5dvh] backdrop-blur-3xl'
-      >
+      <div id='content' className='overflow-hidden h-[92dvh] backdrop-blur-3xl'>
         {children}
       </div>
     </div>

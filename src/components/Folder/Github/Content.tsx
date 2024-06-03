@@ -9,7 +9,7 @@ function Content() {
   return (
     <FolderView id='github'>
       <div className='w-full h-full p-5 overflow-y-auto pb-20'>
-        <h1 className='text-3xl text-center font-open-sans font-bold uppercase tracking-wide'>
+        <h1 className='text-3xl text-center font-open-sans font-bold tracking-wide'>
           Github Repositories
         </h1>
         <div className='w-3/4 flex flex-wrap gap-5 mx-auto mt-10 justify-center'>
