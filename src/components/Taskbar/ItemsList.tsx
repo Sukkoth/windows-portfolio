@@ -1,4 +1,5 @@
 import Github from "../Folder/Github";
+import Todo from "../Folder/Todo";
 import Projects from "../Folder/Projects";
 import Weather from "../Folder/Weather";
 import TaskbarItem from "./TaskbarItem";
@@ -13,14 +14,7 @@ function ItemsList() {
       <Projects />
       <Github />
       <Weather />
-      <TaskbarItem
-        id='linkedin'
-        imgUrl='https://img.icons8.com/?size=100&id=xuvGCOXi8Wyg&format=png&color=000000'
-      />
-      <TaskbarItem
-        id='telegram'
-        imgUrl='https://img.icons8.com/?size=100&id=oWiuH0jFiU0R&format=png&color=000000'
-      />
+      <Todo />
     </div>
   );
 }
