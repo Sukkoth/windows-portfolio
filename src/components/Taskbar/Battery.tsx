@@ -5,6 +5,7 @@ function Battery() {
   const [batteryLevel, setBatteryLevel] = useState<number>(100);
 
   useEffect(() => {
+    // @ts-expect-error //this is because most browsers do not support this
     navigator.getBattery().then((battery) => {
       function updateAllBatteryInfo() {
         updateChargeInfo();
