@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        folder: "3fr 1fr repeat(3, 1fr)",
+      },
       colors: {
         "hover-color": "#303032",
       },

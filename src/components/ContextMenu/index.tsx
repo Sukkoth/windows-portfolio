@@ -7,7 +7,7 @@ function ContextMenu({ position }: { position: { x: number; y: number } }) {
         top: `${position.y}px`,
         left: `${position.x}px`,
       }}
-      className='absolute w-[16rem] bg-stone-700/70 backdrop-blur-2xl rounded-md p-1 z-50 text-sm space-y-0 divide-y divide-stone-500'
+      className='absolute w-[16rem] bg-stone-700/70 backdrop-blur-2xl rounded-md p-1 z-[999999] text-sm space-y-0 divide-y divide-stone-500'
     >
       <div>
         <ContextItem

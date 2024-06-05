@@ -2,7 +2,7 @@ function ProjectItem() {
   return (
     <div className='border border-stone-700 rounded-2xl overflow-hidden hover:scale-105 duration-300'>
       <img
-        src='assets/homepage0.png'
+        src='/assets/homepage0.png'
         alt='image'
         className='w-full h-48 object-cover'
       />

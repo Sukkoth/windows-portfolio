@@ -8,7 +8,7 @@ type Props = {
 
 function MiniDisplay({ weather }: Props) {
   return (
-    <div className='w-1/4 bg-stone-700/60 h-full p-5 text-center'>
+    <div className='w-1/4 bg-stone-700/60 p-5 text-center'>
       <h1 className='text-4xl mb-5'>{getGreeting()}</h1>
       <h3 className='text-3xl'>{formatTime()}</h3>
       {/* //! */}

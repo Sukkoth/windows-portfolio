@@ -51,3 +51,11 @@
   transform: translate(-50%, -50%);
   border-radius: 100%;
 }
+
+.task-items-list .task-item {
+  @apply z-50 relative before:content-[''] before:-left-[6px] before:-right-2 before:-top-[6px] before:-bottom-[6px] before:bg-hover-color before:absolute before:-z-50 before:rounded-lg before:hidden hover:before:block cursor-pointer before:shadow-inner before:shadow-stone-700;
+}
+
+.task-items-list .active {
+  @apply relative after:w-[15px] after:h-[4px] after:rounded-lg after:bg-orange-500 after:left-[8.5px] after:absolute;
+}

@@ -5,8 +5,17 @@ import ContextItem from "../ContextMenu/ContextItem";
 import { useState } from "react";
 import { useTab } from "@/Provider/TabProvider";
 
-function Start({ close }: { close: () => void }) {
-  const { handler } = useOutsideClick(close);
+function Start({
+  onClose,
+  blackList,
+}: {
+  onClose: () => void;
+  blackList: HTMLDivElement | null;
+}) {
+  const { handler } = useOutsideClick({
+    action: onClose,
+    blackList: [blackList],
+  });
   const [showPowerOptions, setShowPowerOptions] = useState(false);
   const { toggleAsleep } = useTab();
 

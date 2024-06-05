@@ -1,51 +1,27 @@
-import Day from "./components/Day";
-import TaskBar from "./components/Taskbar/Taskbar";
-import { CSSProperties, useState } from "react";
-import ContextMenu from "./components/ContextMenu";
-import { useTab } from "./Provider/TabProvider";
-import LockScreen from "./components/LockScreen";
-import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Layout from "@/Layout";
+import Home from "@/Pages/Home";
+
+import "@/App.css";
+import FolderView from "./components/Folder/View/FolderView";
+import Github from "@/components/Folder/Github";
+import Weather from "@/components/Folder/Weather";
+import Todo from "@/components/Folder/Todo";
+import Projects from "./components/Folder/Projects";
 
 function App() {
-  const [showMenu, setShowMenu] = useState(false);
-  const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
-  const { toggleAsleep, asleep } = useTab();
-
-  const handleRightClick = (
-    event: React.MouseEvent<HTMLElement, MouseEvent>
-  ) => {
-    event.preventDefault();
-    setMenuPosition({ x: event.clientX, y: event.clientY });
-    setShowMenu(true);
-  };
-
-  const handleClick = () => {
-    setShowMenu(false);
-  };
-
-  const asleepBg: CSSProperties = {
-    backgroundImage: "url('https://random.imagecdn.app/1920/1080')",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-  };
-
   return (
-    <main
-      style={asleep ? asleepBg : undefined}
-      className='text-white h-[100dvh] overflow-hidden'
-      onContextMenu={handleRightClick}
-      onClick={handleClick}
-      onDoubleClick={() => toggleAsleep(false)}
-    >
-      {!asleep && showMenu && <ContextMenu position={menuPosition} />}
-      {!asleep && (
-        <>
-          <Day />
-          <TaskBar />
-        </>
-      )}
-      {asleep && <LockScreen />}
-    </main>
+    <Routes>
+      <Route path='/' element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path='app' element={<FolderView />}>
+          <Route path='github' element={<Github />} />
+          <Route path='weather' element={<Weather />} />
+          <Route path='todo' element={<Todo />} />
+          <Route path='explorer' element={<Projects />} />
+        </Route>
+      </Route>
+    </Routes>
   );
 }
 

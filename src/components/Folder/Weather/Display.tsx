@@ -8,7 +8,7 @@ type Props = {
 
 function Display({ weather }: Props) {
   return (
-    <div className='w-3/4 bg-stone-800/60 h-full p-5 text-center'>
+    <div className='w-3/4 bg-stone-800/60 p-5 text-center'>
       <div className='flex justify-between items-center px-10'>
         <h1 className='text-2xl'>
           {weather.location.name}, {weather.location.country}

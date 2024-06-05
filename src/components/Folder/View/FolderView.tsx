@@ -1,50 +1,25 @@
-import { useTab } from "@/Provider/TabProvider";
-import Modal from "@/components/Modal";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { Outlet } from "react-router-dom";
+import ViewNav from "./ViewNav";
 
-type Props = {
-  children: React.ReactNode;
-  id: string;
-};
-
-function FolderView({ children, id }: Props) {
-  const { activeTab } = useTab();
+function FolderView() {
   const [maxView, setMaxView] = useState<boolean>(
     JSON.parse(localStorage.getItem("maxView") || "true")
   );
 
-  useEffect(() => {
-    localStorage.setItem("maxView", JSON.stringify(maxView));
-  }, [maxView]);
+  function toggleMaxView() {
+    setMaxView((prev) => !prev);
+    localStorage.setItem("maxView", JSON.stringify(!maxView));
+  }
+
+  const maxToggledClass = `${!maxView ? "scale-75" : ""}`;
 
   return (
     <div
-      className={`${
-        !maxView ? "scale-75" : ""
-      } text-white fixed top-0 left-0 right-0 z-50 bg-[#0402157f] backdrop:shadow-3xl h-full ${
-        activeTab === id ? "text-green-500" : ""
-      }`}
+      className={`text-white bg-[#0402157f] w-full h-full overflow-hidden ${maxToggledClass}`}
     >
-      <div className='bg-hover-color h-9'>
-        <div className='flex items-center gap-2 float-end pl-3'>
-          <img
-            className='modal-icons'
-            src='https://img.icons8.com/?size=100&id=98023&format=png&color=ffffff'
-            alt=''
-            onClick={() => setMaxView((prev) => !prev)}
-          />
-          <Modal.Button type='CLOSE'>
-            <img
-              className='modal-icons hover:bg-red-600'
-              src='https://img.icons8.com/?size=100&id=8112&format=png&color=ffffff'
-              alt=''
-            />
-          </Modal.Button>
-        </div>
-      </div>
-      <div id='content' className='overflow-hidden h-[92dvh] backdrop-blur-3xl'>
-        {children}
-      </div>
+      <ViewNav onSetView={toggleMaxView} />
+      <div className='overflow-y-auto h-full'>{<Outlet />}</div>
     </div>
   );
 }
