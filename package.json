@@ -12,9 +12,11 @@
   "dependencies": {
     "@tanstack/react-query": "^5.40.0",
     "@tanstack/react-query-devtools": "^5.40.0",
+    "jotai": "^2.8.3",
     "react": "^18.2.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.23.1",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {
