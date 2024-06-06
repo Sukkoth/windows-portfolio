@@ -2,19 +2,6 @@ import Row from "@/components/Explorer/Projects/Row";
 import { projects } from "@/components/Explorer/Projects/data";
 
 function Projects() {
-  const activeImg = (
-    <img
-      src='https://img.icons8.com/?size=100&id=70yRC8npwT3d&format=png&color=000000'
-      className='size-5'
-    />
-  );
-  const inactiveImg = (
-    <img
-      src='https://img.icons8.com/?size=100&id=VACKPnlQAC59&format=png&color=000000'
-      className='size-5'
-    />
-  );
-
   function getStatusImg(status: boolean) {
     return status ? activeImg : inactiveImg;
   }
@@ -31,7 +18,7 @@ function Projects() {
 
       {projects.map((project) => (
         <Row key={project.id}>
-          <Row.Item withIcon>{project.projectName}</Row.Item>
+          <Row.Item iconType='folder'>{project.projectName}</Row.Item>
           <Row.Item>
             <span>{getStatusImg(project.status)}</span>
           </Row.Item>
@@ -43,5 +30,18 @@ function Projects() {
     </div>
   );
 }
+
+const activeImg = (
+  <img
+    src='https://img.icons8.com/?size=100&id=70yRC8npwT3d&format=png&color=000000'
+    className='size-5'
+  />
+);
+const inactiveImg = (
+  <img
+    src='https://img.icons8.com/?size=100&id=VACKPnlQAC59&format=png&color=000000'
+    className='size-5'
+  />
+);
 
 export default Projects;

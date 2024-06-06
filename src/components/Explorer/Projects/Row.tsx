@@ -19,18 +19,20 @@ function Row({ children, enableHover = true }: Props) {
 
 type ItemProps = {
   children: React.ReactNode;
-  withIcon?: boolean;
+  iconType?: "folder" | "link";
 };
 
-function Item({ children, withIcon = false }: ItemProps) {
-  if (withIcon) {
+function Item({ children, iconType }: ItemProps) {
+  const matchIcons = {
+    link: "https://img.icons8.com/?size=100&id=n9d0Hm43JCPK&format=png&color=000000",
+    folder:
+      "https://img.icons8.com/?size=100&id=dINnkNb1FBl4&format=png&color=000000",
+  };
+
+  if (iconType) {
     return (
       <div className='flex gap-3 px-2 py-2'>
-        <img
-          className='size-5'
-          src='https://img.icons8.com/?size=100&id=dINnkNb1FBl4&format=png&color=000000'
-          alt='ic'
-        />
+        <img className='size-5' src={matchIcons[iconType]} alt='ic' />
         <p>{children}</p>
       </div>
     );

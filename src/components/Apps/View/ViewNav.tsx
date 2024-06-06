@@ -17,7 +17,16 @@ function ViewNav({ onSetView, type = "app" }: Props) {
       {type === "folder" ? (
         <div className='h-full px-3 py-0 flex rounded-tr-xl items-center justify-between bg-gray-700 text-sm w-40'>
           <p className='capitalize'>{pathToDisplay}</p>
-          <p className='cursor-pointer px-3 py-1 hover:bg-red-500'>x</p>
+          <p
+            className='cursor-pointer px-3 py-1 hover:bg-red-500'
+            onClick={() =>
+              navigate("/", {
+                replace: true,
+              })
+            }
+          >
+            x
+          </p>
         </div>
       ) : (
         <div></div>
