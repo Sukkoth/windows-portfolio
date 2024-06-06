@@ -59,3 +59,7 @@
 .task-items-list .active {
   @apply relative after:w-[15px] after:h-[4px] after:rounded-lg after:bg-orange-500 after:left-[8.5px] after:absolute;
 }
+
+.explorer-menu .active {
+  @apply bg-stone-700/50;
+}

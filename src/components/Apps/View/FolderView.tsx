@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import ViewNav from "./ViewNav";
 
-function FolderView() {
+function FolderView({ type = "app" }: { type: "app" | "folder" }) {
   const [maxView, setMaxView] = useState<boolean>(
     JSON.parse(localStorage.getItem("maxView") || "true")
   );
@@ -18,7 +18,7 @@ function FolderView() {
     <div
       className={`text-white bg-[#0402157f] w-full h-full overflow-hidden ${maxToggledClass}`}
     >
-      <ViewNav onSetView={toggleMaxView} />
+      <ViewNav onSetView={toggleMaxView} type={type} />
       <div className='overflow-y-auto h-full'>{<Outlet />}</div>
     </div>
   );
