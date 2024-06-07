@@ -3,12 +3,17 @@ import React from "react";
 type Props = {
   children: React.ReactNode;
   enableHover?: boolean;
+  gridClass?: string;
 };
 
-function Row({ children, enableHover = true }: Props) {
+function Row({
+  children,
+  enableHover = true,
+  gridClass = "grid-cols-folder",
+}: Props) {
   return (
     <div
-      className={`grid grid-cols-folder mb-1 ${
+      className={`grid ${gridClass} mb-1 ${
         enableHover ? "hover:bg-stone-700/40" : ""
       } rounded-lg`}
     >
@@ -19,7 +24,14 @@ function Row({ children, enableHover = true }: Props) {
 
 type ItemProps = {
   children: React.ReactNode;
-  iconType?: "folder" | "link";
+  iconType?:
+    | "folder"
+    | "imageFolder"
+    | "shortcut"
+    | "link"
+    | "image"
+    | "github"
+    | "textFile";
 };
 
 function Item({ children, iconType }: ItemProps) {
@@ -27,6 +39,17 @@ function Item({ children, iconType }: ItemProps) {
     link: "https://img.icons8.com/?size=100&id=n9d0Hm43JCPK&format=png&color=000000",
     folder:
       "https://img.icons8.com/?size=100&id=dINnkNb1FBl4&format=png&color=000000",
+    imageFolder:
+      "https://img.icons8.com/?size=100&id=K5ZTlMA55wO5&format=png&color=000000",
+    image:
+      "https://img.icons8.com/?size=100&id=bjHuxcHTNosO&format=png&color=000000",
+    github: "https://img.icons8.com/?size=100&id=16318&format=png&color=ffffff",
+    program:
+      "https://img.icons8.com/?size=100&id=l0UsZRTvcGel&format=png&color=000000",
+    shortcut:
+      "https://img.icons8.com/?size=100&id=i1z7pQ2orcJk&format=png&color=000000",
+    textFile:
+      "https://img.icons8.com/?size=100&id=Ygov9LJC2LzE&format=png&color=000000",
   };
 
   if (iconType) {

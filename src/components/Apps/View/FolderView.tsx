@@ -2,7 +2,17 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import ViewNav from "./ViewNav";
 
-function FolderView({ type = "app" }: { type: "app" | "folder" }) {
+function FolderView({
+  children,
+  type = "app",
+  onClose,
+  withOutlet = true,
+}: {
+  children?: React.ReactNode;
+  type: "app" | "folder";
+  onClose?: () => void;
+  withOutlet?: boolean;
+}) {
   const [maxView, setMaxView] = useState<boolean>(
     JSON.parse(localStorage.getItem("maxView") || "true")
   );
@@ -18,8 +28,10 @@ function FolderView({ type = "app" }: { type: "app" | "folder" }) {
     <div
       className={`text-white bg-[#0402157f] w-full h-full overflow-hidden ${maxToggledClass}`}
     >
-      <ViewNav onSetView={toggleMaxView} type={type} />
-      <div className='overflow-y-auto h-full'>{<Outlet />}</div>
+      <ViewNav onSetView={toggleMaxView} type={type} onClose={onClose} />
+      <div className='overflow-y-auto h-full'>
+        {withOutlet ? <Outlet /> : children}
+      </div>
     </div>
   );
 }

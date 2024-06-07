@@ -13,6 +13,9 @@ import Documents from "@/components/Explorer/Documents";
 import Pictures from "@/components/Explorer/Pictures";
 import Links from "@/components/Explorer/Links";
 import About from "@/components/Explorer/About";
+import Detail from "./components/Explorer/Projects/Detail";
+import Images from "./components/Explorer/Projects/Detail/Images";
+import Notepad from "./components/Apps/Notepad";
 
 function App() {
   return (
@@ -23,10 +26,15 @@ function App() {
           <Route path='github' element={<Github />} />
           <Route path='weather' element={<Weather />} />
           <Route path='todo' element={<Todo />} />
+          <Route path='notepad' element={<Notepad />} />
         </Route>
         <Route path='explorer' element={<FolderView type='folder' />}>
           <Route path='' element={<ExplorerView />}>
-            <Route path='projects' element={<Projects />} />
+            <Route path='projects'>
+              <Route index element={<Projects />} />
+              <Route path=':projectId' element={<Detail />} />
+              <Route path=':projectId/images' element={<Images />} />
+            </Route>
             <Route path='documents' element={<Documents />} />
             <Route path='pictures' element={<Pictures />} />
             <Route path='links' element={<Links />} />
