@@ -61,5 +61,5 @@
 }
 
 .explorer-menu .active {
-  @apply bg-stone-700/50;
+  @apply bg-stone-700/50 justify-start lg:w-full;
 }

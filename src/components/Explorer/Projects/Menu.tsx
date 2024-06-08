@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 function Menu() {
   return (
-    <div className='flex justify-between lg:flex-col p-5 space-y-1 explorer-menu'>
+    <div className='flex lg:flex-col lg:gap-2 px-3 pt-6'>
       <MenuItem
         to='projects'
         imageUrl='https://img.icons8.com/?size=100&id=dINnkNb1FBl4&format=png&color=000000'
@@ -13,6 +13,7 @@ function Menu() {
         imageUrl='https://img.icons8.com/?size=100&id=Us0gLlbSYM9k&format=png&color=000000'
         title='Documents'
       />
+
       <MenuItem
         to='pictures'
         imageUrl='https://img.icons8.com/?size=100&id=K5ZTlMA55wO5&format=png&color=000000'
@@ -43,7 +44,7 @@ function MenuItem({ imageUrl, title, to }: MenuItemProps) {
     <NavLink
       to={to}
       replace
-      className='flex gap-2 hover:bg-stone-700/50 p-2 rounded-lg items-center'
+      className='gap-2 w-full flex hover:bg-stone-700/50 p-2 rounded-lg justify-center lg:justify-start'
     >
       <img className='size-6' src={imageUrl} />{" "}
       <p className='hidden sm:block'>{title}</p>

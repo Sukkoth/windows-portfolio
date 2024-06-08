@@ -13,7 +13,7 @@ function Row({
 }: Props) {
   return (
     <div
-      className={`grid  ${gridClass} mb-1 ${
+      className={`grid ${gridClass} mb-1 ${
         enableHover ? "hover:bg-stone-700/40" : ""
       } rounded-lg`}
     >
@@ -66,6 +66,7 @@ function Item({ children, iconType }: ItemProps) {
 type TitleProps = {
   children: React.ReactNode;
 };
+
 function Title({ children }: TitleProps) {
   return <p className='border border-stone-600 ps-2 py-1'>{children}</p>;
 }
