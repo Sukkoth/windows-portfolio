@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 function Menu() {
   return (
-    <div className='flex lg:flex-col lg:gap-2 px-3 pt-6'>
+    <div className='flex lg:flex-col lg:gap-2 px-3 pt-6 explorer-menu'>
       <MenuItem
         to='projects'
         imageUrl='https://img.icons8.com/?size=100&id=dINnkNb1FBl4&format=png&color=000000'
