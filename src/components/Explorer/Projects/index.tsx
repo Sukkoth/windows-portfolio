@@ -1,5 +1,6 @@
 import Row from "@/components/Explorer/Projects/Row";
 import { projects } from "@/components/Explorer/Projects/data";
+import { getFormattedDate } from "@/utils/date";
 import { useNavigate } from "react-router-dom";
 
 function Projects() {
@@ -33,10 +34,10 @@ function Projects() {
               <Row.Item>{"File Folder"}</Row.Item>
               <Row.Item>{project.platform}</Row.Item>
               <Row.Item>
-                {new Date(project.createdAt).toLocaleString()}
+                {getFormattedDate(new Date(project.createdAt))}
               </Row.Item>
               <Row.Item>
-                {new Date(project.updatedAt).toLocaleString()}
+                {getFormattedDate(new Date(project.updatedAt))}
               </Row.Item>
             </Row>
           </div>

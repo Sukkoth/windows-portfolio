@@ -39,3 +39,7 @@ html {
   scrollbar-width: thin; /* "auto" or "thin" */
   scrollbar-color: #890f62 #03071f; /* scroll thumb and track */
 }
+
+.debug {
+  @apply border border-red-500;
+}

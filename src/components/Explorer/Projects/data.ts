@@ -2,7 +2,7 @@ import { Project } from "./types";
 
 export const projects: Project[] = [
   {
-    id: "1",
+    id: 1,
     projectName: "Task Mate",
     status: true,
     platform: "Web",
@@ -10,7 +10,7 @@ export const projects: Project[] = [
     updatedAt: "2023-06-01T11:00:00Z",
   },
   {
-    id: "2",
+    id: 2,
     projectName: "Portfolio",
     status: true,
     platform: "Web",
@@ -18,7 +18,7 @@ export const projects: Project[] = [
     updatedAt: "2023-05-20T09:30:25Z",
   },
   {
-    id: "3",
+    id: 3,
     projectName: "Movie Plus",
     status: true,
     platform: "Web",
@@ -26,7 +26,7 @@ export const projects: Project[] = [
     updatedAt: "2023-04-15T16:45:50Z",
   },
   {
-    id: "4",
+    id: 4,
     projectName: "Kairos",
     status: true,
     platform: "Web",
@@ -34,7 +34,7 @@ export const projects: Project[] = [
     updatedAt: "2023-03-22T10:50:30Z",
   },
   {
-    id: "5",
+    id: 5,
     projectName: "Typy",
     status: true,
     platform: "Web",
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     updatedAt: "2023-02-25T08:55:40Z",
   },
   {
-    id: "6",
+    id: 6,
     projectName: "TaskStar",
     status: true,
     platform: "Web",
@@ -50,7 +50,7 @@ export const projects: Project[] = [
     updatedAt: "2023-02-25T08:55:40Z",
   },
   {
-    id: "7",
+    id: 7,
     projectName: "Menu Extraction",
     status: true,
     platform: "Web",
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     updatedAt: "2023-02-25T08:55:40Z",
   },
   {
-    id: "8",
+    id: 8,
     projectName: "Eshop",
     status: true,
     platform: "Web",
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     updatedAt: "2023-02-25T08:55:40Z",
   },
   {
-    id: "9",
+    id: 9,
     projectName: "Eshop Backend",
     status: true,
     platform: "Backend",
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     updatedAt: "2023-02-25T08:55:40Z",
   },
   {
-    id: "10",
+    id: 10,
     projectName: "Quote Generator",
     status: true,
     platform: "Web",

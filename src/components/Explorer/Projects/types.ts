@@ -1,5 +1,5 @@
 export interface Project {
-  id: string;
+  id: number;
   projectName: string;
   status: boolean;
   platform: "Web" | "App" | "Backend";
