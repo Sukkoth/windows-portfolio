@@ -22,6 +22,25 @@ export default {
       },
     },
   },
-  // eslint-disable-next-line no-undef
-  plugins: [require("tailwind-scrollbar-hide")],
+  plugins: [
+    // eslint-disable-next-line no-undef
+    require("tailwind-scrollbar-hide"),
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".custom-full-width": {},
+        ".hover-effect": {
+          content: '""',
+          position: "absolute",
+          top: "-4px",
+          right: "-4px",
+          bottom: "-4px",
+          left: "-4px",
+          zIndex: "-10",
+          borderRadius: "0.5rem",
+          backgroundColor: "#303032",
+        },
+      };
+      addUtilities(newUtilities, ["hover"]);
+    },
+  ],
 };

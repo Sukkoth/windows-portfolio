@@ -2,12 +2,6 @@
   @apply size-9 hover:bg-stone-600 p-3 object-contain;
 }
 
-/* TODO task bar on hover is glitching */
-.stars-cover {
-  background-image: url("/assets/stars.jpg");
-  background-size: contain;
-}
-
 .repo-item {
   width: 300px;
   height: 400px;
@@ -52,12 +46,24 @@
   border-radius: 100%;
 }
 
+.custom-before::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  bottom: -4px;
+  left: -4px;
+  z-index: -10;
+  border-radius: 0.5rem; /* Adjust this value if you need a different rounding */
+  background-color: #303032; /* Assuming --hover-color is defined in your CSS */
+}
+
 .task-items-list .task-item {
-  @apply z-50 relative before:content-[''] before:-left-[6px] before:-right-2 before:-top-[6px] before:-bottom-[6px] before:bg-hover-color before:absolute before:-z-50 before:rounded-lg before:hidden hover:before:block cursor-pointer before:shadow-inner before:shadow-stone-700;
+  @apply relative p-1 hover:before:hover-effect;
 }
 
 .task-items-list .active {
-  @apply relative after:w-[15px] after:h-[4px] after:rounded-lg after:bg-orange-500 after:left-[8.5px] after:absolute;
+  @apply after:inset-x-1/4 after:h-[4px] after:rounded-lg after:bg-orange-500 after:absolute before:hover-effect;
 }
 
 .explorer-menu .active {

@@ -1,10 +1,12 @@
 import TaskbarItem from "./TaskbarItem";
 import { useCallback, useRef, useState } from "react";
 import Start from "../Start";
+import { useLocation } from "react-router-dom";
 
 function ItemsList() {
   const [opened, setOpened] = useState(false);
   const startRef = useRef<HTMLDivElement | null>(null);
+  const { pathname } = useLocation();
 
   const toggleStart = useCallback(() => {
     setOpened(false);
@@ -30,17 +32,23 @@ function ItemsList() {
         imgUrl='https://img.icons8.com/?size=100&id=dINnkNb1FBl4&format=png&color=000000'
       />
       <TaskbarItem
-        to='app/github'
+        to='/app/github'
         imgUrl='https://img.icons8.com/?size=120&id=AZOZNnY73haj&format=png&color=000000'
       />
       <TaskbarItem
-        to='app/weather'
+        to='/app/weather'
         imgUrl='https://img.icons8.com/?size=100&id=zIVmoh4T8wh7&format=png&color=000000'
       />
       <TaskbarItem
-        to='app/todo'
+        to='/app/todo'
         imgUrl='https://img.icons8.com/?size=100&id=HpPqCqynotVp&format=png&color=000000'
       />
+      {pathname.includes("app/notepad") && (
+        <TaskbarItem
+          to='/app/notepad'
+          imgUrl='https://img.icons8.com/?size=100&id=Ygov9LJC2LzE&format=png&color=000000'
+        />
+      )}
     </div>
   );
 }

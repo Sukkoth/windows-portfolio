@@ -9,7 +9,7 @@ function Projects() {
   }
 
   return (
-    <div className='h-full border border-stone-600 border-t-0 border-l-0  overflow-x-scroll'>
+    <div className='h-full border border-stone-600 border-t-0 border-l-0  overflow-x-auto'>
       <div className='min-w-[60rem]'>
         <Row enableHover={false} gridClass='grid-cols-[3fr_1fr_repeat(4,_1fr)]'>
           <Row.Title>Name</Row.Title>

@@ -1,10 +1,25 @@
-import { NavLink } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-function TaskbarItem({ imgUrl, to }: { imgUrl: string; to: string }) {
+type Props = { imgUrl: string; to: string };
+
+function TaskbarItem({ imgUrl, to }: Props) {
+  const { pathname } = useLocation();
+
+  //if pathname is the same, => close the app
+  //else, => open the app
+  //it's like a toggle button
+  const redirectProps = {
+    to: pathname === to ? "/" : to,
+    replace: pathname === to,
+  };
+
   return (
-    <NavLink to={to} className='task-item' title={to}>
+    <Link
+      {...redirectProps}
+      className={`task-item ${pathname === to ? "active" : ""}`}
+    >
       <img src={imgUrl} alt='img' className='size-8' />
-    </NavLink>
+    </Link>
   );
 }
 
