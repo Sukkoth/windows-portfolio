@@ -47,7 +47,7 @@ function Layout() {
 
   return (
     <main className='text-white h-[100dvh] overflow-hidden relative'>
-      <div className='h-[95.1dvh]'>
+      <div className='h-[94dvh]'>
         <Outlet />
         {showPrev && (
           <div className='inset-0 z-[99999] absolute flex overflow-scroll gap-10 items-center justify-center'>
