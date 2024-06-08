@@ -1,6 +1,6 @@
 import { Position } from "@/services/weather/types";
 import { formatTime, getDayName } from "@/utils/date";
-import DayCard from "./Folder/Weather/DayCard";
+import DayCard from "@/components/Apps/Weather/DayCard";
 import { useEffect, useState } from "react";
 import { useGetWeatherData } from "@/react-query/queries";
 
