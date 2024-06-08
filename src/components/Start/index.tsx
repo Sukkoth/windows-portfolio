@@ -30,11 +30,11 @@ function Start({
   return (
     <div
       ref={handler}
-      className='absolute bottom-16 left-[calc(50%-17rem)] rounded-2xl size-[38rem] border border-stone-700 bg-stone-800/70 backdrop-blur-2xl overflow-y-auto scrollbar-hide'
+      className='absolute bottom-16 lg:left-[calc(50%-17rem)] rounded-2xl  border-2 border-stone-700 bg-stone-800/70 backdrop-blur-2xl overflow-hidden  sm-only:mx-1 sm-only:inset-x-0 sm:size-[35rem] md:size[40rem]'
     >
-      <div className='p-4'>
+      <div className='p-2 sm-only:pb-16 h-[90%] max-h-[40rem] overflow-y-scroll scrollbar-hide'>
         <p className='pl-1 text-sm'>Skills</p>
-        <div className='grid grid-cols-6 mt-2 '>
+        <div className='grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-6 mt-2 '>
           {languages.map((item) => (
             <StartItem
               key={item.title}
@@ -44,7 +44,7 @@ function Start({
           ))}
         </div>
         <p className='pl-1 text-sm'>Recently used tools</p>
-        <div className='grid grid-cols-6 mt-2'>
+        <div className='grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-6 mt-2 '>
           {startItems.map((item) => (
             <StartItem
               key={item.title}
@@ -54,7 +54,7 @@ function Start({
           ))}
         </div>
       </div>
-      <div className='bg-stone-700/40 w-full flex items-center justify-end py-4 px-5 bottom-0 absolute'>
+      <div className='bg-stone-700 w-full flex items-center absolute bottom-0 justify-end py-4 px-5'>
         <div
           className='relative'
           onClick={() => showPowerOptions && setShowPowerOptions(false)}

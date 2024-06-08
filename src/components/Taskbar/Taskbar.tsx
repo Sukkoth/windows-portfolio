@@ -3,8 +3,8 @@ import StatusBar from "./StatusBar";
 
 function TaskBar() {
   return (
-    <div className='absolute flex justify-between items-center left-0 right-0 py-[10px] bg-[#222224f1] border-t border-t-stone-700 z-[99999] bottom-0 inset-x-0'>
-      <div className='w-40'></div>
+    <div className='absolute flex justify-between items-center left-0 right-0 py-[15px] bg-[#222224f1] border-t border-t-stone-700 z-[99999] bottom-0 inset-x-0'>
+      <div className='hidden lg:block w-40'></div>
       <ItemsList />
       <StatusBar />
     </div>

@@ -4,7 +4,7 @@ function Breadcrumb() {
   const { pathname } = useLocation();
   const paths = pathname.split("/");
   return (
-    <div className='flex-grow flex px-2 py-2 items-center capitalize bg-gray-700 rounded-lg'>
+    <div className='hidden lg:flex flex-grow px-2 py-2 items-center capitalize bg-gray-700 rounded-lg'>
       {paths.map((path) => (
         <div key={path} className='flex gap-3 hover:bg-gray-500 px-3'>
           <div className='font-medium'>{path}</div>

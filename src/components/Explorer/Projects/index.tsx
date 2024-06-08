@@ -9,7 +9,7 @@ function Projects() {
   }
 
   return (
-    <div className='flex-1 border border-stone-600 border-t-0 border-l-0'>
+    <div className='flex-1   border  border-stone-600 border-t-0 border-l-0'>
       <Row enableHover={false} gridClass='grid-cols-[3fr_1fr_repeat(4,_1fr)]'>
         <Row.Title>Name</Row.Title>
         <Row.Title>Status</Row.Title>
@@ -20,7 +20,7 @@ function Projects() {
       </Row>
 
       {projects.map((project) => (
-        <div onDoubleClick={() => navigate(`2`)}>
+        <div onDoubleClick={() => navigate(`2`)} key={project.id}>
           <Row key={project.id} gridClass='grid-cols-[3fr_1fr_repeat(4,_1fr)]'>
             <Row.Item iconType='folder'>{project.projectName}</Row.Item>
             <Row.Item>

@@ -3,6 +3,12 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        "sm-only": { max: "639px" },
+        xs: {
+          min: "420px",
+        },
+      },
       gridTemplateColumns: {
         folder: "3fr 1fr repeat(3, 1fr)",
       },

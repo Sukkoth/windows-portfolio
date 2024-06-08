@@ -13,7 +13,7 @@ function Row({
 }: Props) {
   return (
     <div
-      className={`grid ${gridClass} mb-1 ${
+      className={`grid  ${gridClass} mb-1 ${
         enableHover ? "hover:bg-stone-700/40" : ""
       } rounded-lg`}
     >
@@ -54,7 +54,7 @@ function Item({ children, iconType }: ItemProps) {
 
   if (iconType) {
     return (
-      <div className='flex gap-3 px-2 py-2'>
+      <div className='flex gap-3 px-2 py-2 items-center'>
         <img className='size-5' src={matchIcons[iconType]} alt='ic' />
         <p>{children}</p>
       </div>
