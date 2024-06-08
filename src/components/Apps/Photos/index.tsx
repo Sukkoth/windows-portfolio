@@ -1,12 +1,9 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
 import { pictures } from "./data";
 
 function Photos() {
-  const location = useLocation();
   const [showing, setShowing] = useState(0);
 
-  // const imagePath = location.state?.imagePath;
   function handleNav(increment: boolean = false) {
     if (increment) {
       if (showing >= pictures.length - 1) {
