@@ -30,7 +30,7 @@ function Start({
   return (
     <div
       ref={handler}
-      className='absolute bottom-16 lg:left-[calc(50%-17rem)] rounded-2xl  border-2 border-stone-700 bg-stone-800/70 backdrop-blur-2xl overflow-hidden  sm-only:mx-1 sm-only:inset-x-0 sm:size-[35rem] md:size[40rem]'
+      className='absolute bottom-16 lg:left-[calc(50%-17rem)] rounded-lg  border-2 border-stone-700 bg-stone-800/70 backdrop-blur-2xl overflow-hidden  sm-only:mx-1 sm-only:inset-x-0 sm:size-[35rem] md:size[40rem]'
     >
       <div className='p-2 sm-only:pb-16 h-[90%] max-h-[40rem] overflow-y-scroll scrollbar-hide'>
         <p className='pl-1 text-sm'>Skills</p>
@@ -54,7 +54,18 @@ function Start({
           ))}
         </div>
       </div>
-      <div className='bg-stone-700 w-full flex items-center absolute bottom-0 justify-end py-4 px-5'>
+      <div className='bg-stone-700 w-full flex items-center absolute bottom-0 justify-between py-3 px-5'>
+        <div
+          onClick={() => {
+            window.open("https://t.me/sukkoth", "_blank");
+          }}
+          className='relative flex items-center gap-2 text-sm cursor-pointer before:content-[""] before:-inset-2 before:absolute before:bg-stone-800/60 before:hidden before:hover:block before:-z-50 z-10 before:rounded-lg'
+        >
+          <div className='size-8 rounded-full border overflow-hidden'>
+            <img src='/assets/avatarresi.png' alt='' />
+          </div>
+          <p>Gadisa Teklu</p>
+        </div>
         <div
           className='relative'
           onClick={() => showPowerOptions && setShowPowerOptions(false)}

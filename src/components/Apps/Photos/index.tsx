@@ -24,10 +24,7 @@ function Photos() {
   return (
     <div className='overflow-hidden h-full bg-stone-900'>
       <div className='outline-none h-full object-cover flex flex-col items-center justify-center'>
-        <div className='w-[80%] h-[80%] relative'>
-          <h1 className='absolute left-[40%] bottom-1 text-sm rounded-lg hover:bg-stone-400/50 px-4 py-2'>
-            This is a cover image for the file
-          </h1>
+        <div className='w-full lg:w-[80%] h-[80%] relative'>
           <img
             src={pictures[showing].path}
             alt='image'

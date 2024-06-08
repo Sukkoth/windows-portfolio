@@ -5,7 +5,11 @@ import Display from "./Display";
 import { useGetWeatherData } from "@/react-query/queries";
 
 function Content() {
-  const [location, setLocation] = useState<Position | null>(null);
+  //default to addis ababa
+  const [location, setLocation] = useState<Position | null>({
+    latitude: 9.0192,
+    longitude: 38.7525,
+  });
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -20,7 +24,7 @@ function Content() {
 
   return (
     <>
-      <div className='flex rounded-2xl w-[98%] mx-auto max-h-full overflow-hidden mt-10'>
+      <div className='flex flex-col lg:flex-row rounded-2xl w-[98%] mx-auto max-h-full lg:overflow-hidden lg:mt-10'>
         {isLoading ? (
           <h1 className='animate-pulse text-stone-400'>Loading . . .</h1>
         ) : isError ? (
