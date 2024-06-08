@@ -1,18 +1,25 @@
-function TaskbarItem({
-  imgUrl,
-  onClick,
-}: {
-  imgUrl: string;
-  id: string;
-  onClick?: () => void;
-}) {
+import { Link, useLocation } from "react-router-dom";
+
+type Props = { imgUrl: string; to: string };
+
+function TaskbarItem({ imgUrl, to }: Props) {
+  const { pathname } = useLocation();
+
+  //if pathname is the same, => close the app
+  //else, => open the app
+  //it's like a toggle button
+  const redirectProps = {
+    to: pathname === to ? "/" : to,
+    replace: pathname === to,
+  };
+
   return (
-    <div
-      onClick={onClick}
-      className="z-50 relative before:content-[' '] before:-left-[6px] before:-right-2 before:-top-[6px] before:-bottom-[6px] before:bg-hover-color before:absolute before:-z-50 before:rounded-lg before:hidden hover:before:block cursor-pointer before:shadow-inner before:shadow-stone-700"
+    <Link
+      {...redirectProps}
+      className={`task-item ${pathname === to ? "active" : ""}`}
     >
       <img src={imgUrl} alt='img' className='size-8' />
-    </div>
+    </Link>
   );
 }
 

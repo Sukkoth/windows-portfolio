@@ -5,7 +5,7 @@ function RepoItem({ repo }: { repo: Repository }) {
     <a
       href={repo.html_url}
       target='_blank'
-      className='w-[17rem] repo-item rounded-xl h-[20rem] bg-[#0a0a24da] hover:scale-105 duration-200 p-3 border border-stone-700 hover:shadow-lg hover:shadow-purple-500'
+      className='w-auto repo-item rounded-xl h-[20rem] bg-[#0a0a24da] hover:scale-105 duration-200 p-3 border border-stone-700 hover:shadow-lg hover:shadow-purple-500'
     >
       <div className='z-10'>
         <div className='w-full h-[40%] flex items-center justify-center object-contain mb-10 mt-5'>
