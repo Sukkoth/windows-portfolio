@@ -5,28 +5,45 @@ function Battery() {
   const [batteryLevel, setBatteryLevel] = useState<number>(100);
 
   useEffect(() => {
-    // @ts-expect-error //this is because most browsers do not support this
-    navigator.getBattery().then((battery) => {
-      function updateAllBatteryInfo() {
-        updateChargeInfo();
-        updateLevelInfo();
-      }
-      updateAllBatteryInfo();
+    navigator
+      // @ts-expect-error //this is because most browsers do not support this
+      .getBattery()
+      // @ts-expect-error //this is because most browsers do not support this
+      .then((battery) => {
+        function updateAllBatteryInfo() {
+          updateChargeInfo();
+          updateLevelInfo();
+        }
 
-      battery.addEventListener("chargingchange", () => {
-        updateChargeInfo();
-      });
-      function updateChargeInfo() {
-        setCharging(battery.charging);
-      }
+        updateAllBatteryInfo();
 
-      battery.addEventListener("levelchange", () => {
-        updateLevelInfo();
+        battery.addEventListener("chargingchange", () => {
+          updateChargeInfo();
+        });
+
+        function updateChargeInfo() {
+          try {
+            setCharging(battery.charging);
+          } catch (error) {
+            console.error("Error updating charging info:", error);
+          }
+        }
+
+        battery.addEventListener("levelchange", () => {
+          updateLevelInfo();
+        });
+
+        function updateLevelInfo() {
+          try {
+            setBatteryLevel(battery.level * 100);
+          } catch (error) {
+            console.error("Error updating battery level:", error);
+          }
+        }
+      })
+      .catch(() => {
+        console.error("Error getting battery information");
       });
-      function updateLevelInfo() {
-        setBatteryLevel(battery.level * 100);
-      }
-    });
   }, []);
 
   return (
