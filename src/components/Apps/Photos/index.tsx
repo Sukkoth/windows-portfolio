@@ -1,26 +1,49 @@
 import { useState } from "react";
-import { pictures } from "./data";
+import { pictures as PICTURES_DATA } from "./data";
+import { useLocation } from "react-router-dom";
 
 function Photos() {
-  const [showing, setShowing] = useState(0);
+  //get project specific images,
+  //set the image id to the index
+  const {
+    state: { projectId, pictureId, pictureIndex },
+  } = useLocation();
+
+  const projectToShow = PICTURES_DATA.filter((picture) => {
+    return picture.projectId === projectId;
+  });
+
+  const [showing, setShowing] = useState(
+    projectToShow.length > 0 ? parseInt(pictureIndex) : 0
+  );
+
   const [loading, setLoading] = useState(true);
 
   const handleImageLoad = () => {
     setLoading(false);
   };
 
+  console.log({
+    projectId,
+    pictureId,
+    pictureIndex,
+    projectToShow,
+    PICTURES_DATA,
+    showing,
+  });
+
   function handleNav(increment: boolean = false) {
     setLoading(true); //set loading true when image resets,
     //it will be set to false when the image loads
     if (increment) {
-      if (showing >= pictures.length - 1) {
+      if (showing >= projectToShow.length - 1) {
         setShowing(0);
       } else {
         setShowing((prev) => prev + 1);
       }
     } else {
       if (showing === 0) {
-        setShowing(pictures.length - 1);
+        setShowing(projectToShow.length - 1);
       } else setShowing((prev) => prev - 1);
     }
   }
@@ -39,7 +62,7 @@ function Photos() {
           )}
           <img
             onLoad={handleImageLoad}
-            src={pictures[showing].path}
+            src={projectToShow[showing].imagePath}
             alt='image'
             className='object-contain size-full'
           />
@@ -50,7 +73,7 @@ function Photos() {
             imageUrl='https://img.icons8.com/?size=100&id=1806&format=png&color=ffffff'
           />
           <h1 className='text-xl'>
-            {showing + 1} | {pictures.length}
+            {showing + 1} | {projectToShow.length}
           </h1>
           <MenuItem
             onClick={() => handleNav(true)}

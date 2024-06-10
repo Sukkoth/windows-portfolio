@@ -1,7 +1,8 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Row from "../Row";
 
 function Detail() {
+  const { projectId } = useParams();
   const navigate = useNavigate();
   return (
     <div className='flex-1 h-full border border-stone-600 border-t-0 border-l-0 overflow-x-auto'>
@@ -12,7 +13,15 @@ function Detail() {
           <Row.Title>Created at</Row.Title>
           <Row.Title>Updated at</Row.Title>
         </Row>
-        <div onDoubleClick={() => navigate(`images`)}>
+        <div
+          onDoubleClick={() =>
+            navigate(`images`, {
+              state: {
+                projectId,
+              },
+            })
+          }
+        >
           <Row gridClass='grid-cols-[3fr_1fr_repeat(2,_1fr)]'>
             <Row.Item iconType='imageFolder'>Images</Row.Item>
             <Row.Item>File Folder</Row.Item>

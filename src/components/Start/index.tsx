@@ -4,6 +4,7 @@ import { languages, startItems } from "./data";
 import ContextItem from "../ContextMenu/ContextItem";
 import { useState } from "react";
 import { useTab } from "@/Provider/TabProvider";
+import { useNavigate } from "react-router-dom";
 
 function Start({
   onClose,
@@ -12,6 +13,8 @@ function Start({
   onClose: () => void;
   blackList: HTMLDivElement | null;
 }) {
+  const navigate = useNavigate();
+
   const { handler } = useOutsideClick({
     action: onClose,
     blackList: [blackList],
@@ -57,7 +60,8 @@ function Start({
       <div className='bg-stone-700 w-full flex items-center absolute bottom-0 justify-between py-3 px-5'>
         <div
           onClick={() => {
-            window.open("https://t.me/sukkoth", "_blank");
+            navigate("/explorer/about");
+            onClose();
           }}
           className='relative flex items-center gap-2 text-sm cursor-pointer before:content-[""] before:-inset-2 before:absolute before:bg-stone-800/60 before:hidden before:hover:block before:-z-50 z-10 before:rounded-lg'
         >

@@ -31,7 +31,7 @@ function App() {
           <Route path='photos' element={<Photos />} />
         </Route>
         <Route path='explorer' element={<FolderView type='folder' />}>
-          <Route path='' element={<ExplorerView />}>
+          <Route element={<ExplorerView />}>
             <Route path='projects'>
               <Route index element={<Projects />} />
               <Route path=':projectId' element={<Detail />} />
