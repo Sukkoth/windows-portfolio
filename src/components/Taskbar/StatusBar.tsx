@@ -1,4 +1,3 @@
-import Battery from "./Battery";
 import Network from "./Network";
 import Time from "./Time";
 
