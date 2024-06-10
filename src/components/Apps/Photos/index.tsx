@@ -3,8 +3,15 @@ import { pictures } from "./data";
 
 function Photos() {
   const [showing, setShowing] = useState(0);
+  const [loading, setLoading] = useState(true);
+
+  const handleImageLoad = () => {
+    setLoading(false);
+  };
 
   function handleNav(increment: boolean = false) {
+    setLoading(true); //set loading true when image resets,
+    //it will be set to false when the image loads
     if (increment) {
       if (showing >= pictures.length - 1) {
         setShowing(0);
@@ -22,7 +29,16 @@ function Photos() {
     <div className='overflow-hidden h-full bg-stone-900'>
       <div className='outline-none h-full object-cover flex flex-col items-center justify-center'>
         <div className='w-full lg:w-[80%] h-[80%] relative'>
+          {loading && (
+            <div className='absolute inset-0 flex bg-stone-900 items-center justify-center z-10'>
+              <img
+                className='animate-spin size-10 brightness-75'
+                src='https://img.icons8.com/?size=100&id=0BQGp1zaYp5N&format=png&color=ffffff'
+              />
+            </div>
+          )}
           <img
+            onLoad={handleImageLoad}
             src={pictures[showing].path}
             alt='image'
             className='object-contain size-full'
