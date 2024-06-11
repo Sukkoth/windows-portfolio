@@ -33,7 +33,7 @@ function Start({
   return (
     <div
       ref={handler}
-      className='absolute bottom-16 lg:left-[calc(50%-17rem)] rounded-lg  border-2 border-stone-700 bg-stone-800/70 backdrop-blur-2xl overflow-hidden  sm-only:mx-1 sm-only:inset-x-0 sm:size-[35rem] md:size[40rem]'
+      className='absolute bottom-[70px] lg:left-[calc(50%-17rem)] rounded-lg  border-2 border-stone-700 bg-stone-800/70 backdrop-blur-2xl overflow-hidden  sm-only:mx-1 sm-only:inset-x-0 sm:size-[35rem] md:size[40rem]'
     >
       <div className='p-2 sm-only:pb-16 sm-only:h-[70dvh] max-h-[40rem] overflow-y-scroll scrollbar-hide'>
         <p className='pl-1 text-sm'>Skills</p>

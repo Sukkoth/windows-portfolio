@@ -11,7 +11,7 @@ function Day() {
   const today = new Date().getDay();
 
   return (
-    <h1 className='mt-24 text-center text-4xl md:text-6xl xl:text-8xl font-anurati uppercase tracking-widest'>
+    <h1 className='absolute  inset-x-0 top-36 text-center text-2xl sm:text-4xl  md:text-6xl xl:text-8xl font-anurati uppercase tracking-widest'>
       {weekdays[today]}
     </h1>
   );

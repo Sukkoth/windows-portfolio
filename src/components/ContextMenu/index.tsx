@@ -1,6 +1,10 @@
 import ContextItem from "./ContextItem";
 
-function ContextMenu({ position }: { position: { x: number; y: number } }) {
+type Props = {
+  position: { x: number; y: number };
+  onIconsChange: () => void;
+};
+function ContextMenu({ position, onIconsChange }: Props) {
   return (
     <div
       style={{
@@ -34,6 +38,14 @@ function ContextMenu({ position }: { position: { x: number; y: number } }) {
           icon='https://img.icons8.com/?size=100&id=oWiuH0jFiU0R&format=png&color=000000'
         >
           Contact on Telegram
+        </ContextItem>
+      </div>
+      <div>
+        <ContextItem
+          onClick={onIconsChange}
+          icon='https://img.icons8.com/?size=100&id=1838&format=png&color=ffffff'
+        >
+          Show Desktop Icons
         </ContextItem>
       </div>
     </div>
