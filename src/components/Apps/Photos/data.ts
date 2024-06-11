@@ -1,10 +1,13 @@
-export const pictures = [
+import { Photo } from "./types";
+
+export const pictures: Photo[] = [
   {
     id: 1,
     projectId: 4,
     fileName: "Kairos (1)",
     fileType: "png",
     imagePath: "/assets/projects/Kairos/Kairos (1).png",
+    projectName: "Kairos",
   },
   {
     id: 2,
@@ -12,6 +15,7 @@ export const pictures = [
     fileName: "Kairos (2)",
     fileType: "png",
     imagePath: "/assets/projects/Kairos/Kairos (2).png",
+    projectName: "Kairos",
   },
   {
     id: 3,
@@ -19,6 +23,7 @@ export const pictures = [
     fileName: "Kairos (3)",
     fileType: "png",
     imagePath: "/assets/projects/Kairos/Kairos (3).png",
+    projectName: "Kairos",
   },
   {
     id: 4,
@@ -26,6 +31,7 @@ export const pictures = [
     fileName: "Kairos (4)",
     fileType: "png",
     imagePath: "/assets/projects/Kairos/Kairos (4).png",
+    projectName: "Kairos",
   },
   {
     id: 5,
@@ -33,6 +39,7 @@ export const pictures = [
     fileName: "Kairos (5)",
     fileType: "png",
     imagePath: "/assets/projects/Kairos/Kairos (5).png",
+    projectName: "Kairos",
   },
   {
     id: 6,
@@ -40,6 +47,7 @@ export const pictures = [
     fileName: "Kairos (6)",
     fileType: "png",
     imagePath: "/assets/projects/Kairos/Kairos (6).png",
+    projectName: "Kairos",
   },
   {
     id: 7,
@@ -47,6 +55,7 @@ export const pictures = [
     fileName: "Kairos (7)",
     fileType: "png",
     imagePath: "/assets/projects/Kairos/Kairos (7).png",
+    projectName: "Kairos",
   },
   {
     id: 8,
@@ -54,6 +63,7 @@ export const pictures = [
     fileName: "Kairos (8)",
     fileType: "png",
     imagePath: "/assets/projects/Kairos/Kairos (8).png",
+    projectName: "Kairos",
   },
   {
     id: 9,
@@ -61,6 +71,7 @@ export const pictures = [
     fileName: "Kairos (9)",
     fileType: "png",
     imagePath: "/assets/projects/Kairos/Kairos (9).png",
+    projectName: "Kairos",
   },
   {
     id: 10,
@@ -68,6 +79,7 @@ export const pictures = [
     fileName: "Portfolio (1)",
     fileType: "png",
     imagePath: "/assets/projects/Portfolio/Portfolio (1).png",
+    projectName: "Portfolio",
   },
   {
     id: 11,
@@ -75,6 +87,7 @@ export const pictures = [
     fileName: "Portfolio (2)",
     fileType: "png",
     imagePath: "/assets/projects/Portfolio/Portfolio (2).png",
+    projectName: "Portfolio",
   },
   {
     id: 12,
@@ -82,6 +95,7 @@ export const pictures = [
     fileName: "Portfolio (3)",
     fileType: "png",
     imagePath: "/assets/projects/Portfolio/Portfolio (3).png",
+    projectName: "Portfolio",
   },
   {
     id: 13,
@@ -89,6 +103,7 @@ export const pictures = [
     fileName: "Portfolio (4)",
     fileType: "png",
     imagePath: "/assets/projects/Portfolio/Portfolio (4).png",
+    projectName: "Portfolio",
   },
   {
     id: 14,
@@ -96,6 +111,7 @@ export const pictures = [
     fileName: "Portfolio (5)",
     fileType: "png",
     imagePath: "/assets/projects/Portfolio/Portfolio (5).png",
+    projectName: "Portfolio",
   },
   {
     id: 15,
@@ -103,6 +119,7 @@ export const pictures = [
     fileName: "Portfolio (6)",
     fileType: "png",
     imagePath: "/assets/projects/Portfolio/Portfolio (6).png",
+    projectName: "Portfolio",
   },
   {
     id: 16,
@@ -110,6 +127,7 @@ export const pictures = [
     fileName: "Portfolio (7)",
     fileType: "png",
     imagePath: "/assets/projects/Portfolio/Portfolio (7).png",
+    projectName: "Portfolio",
   },
   {
     id: 17,
@@ -117,6 +135,7 @@ export const pictures = [
     fileName: "Portfolio (8)",
     fileType: "png",
     imagePath: "/assets/projects/Portfolio/Portfolio (8).png",
+    projectName: "Portfolio",
   },
   {
     id: 18,
@@ -124,6 +143,7 @@ export const pictures = [
     fileName: "Portfolio (9)",
     fileType: "png",
     imagePath: "/assets/projects/Portfolio/Portfolio (9).png",
+    projectName: "Portfolio",
   },
   {
     id: 19,
@@ -131,6 +151,7 @@ export const pictures = [
     fileName: "Portfolio (10)",
     fileType: "png",
     imagePath: "/assets/projects/Portfolio/Portfolio (10).png",
+    projectName: "Portfolio",
   },
   {
     id: 20,
@@ -138,6 +159,7 @@ export const pictures = [
     fileName: "TaskMate (1)",
     fileType: "png",
     imagePath: "/assets/projects/TaskMate/TaskMate (1).png",
+    projectName: "TaskMate",
   },
   {
     id: 21,
@@ -145,6 +167,7 @@ export const pictures = [
     fileName: "TaskMate (2)",
     fileType: "png",
     imagePath: "/assets/projects/TaskMate/TaskMate (2).png",
+    projectName: "TaskMate",
   },
   {
     id: 22,
@@ -152,6 +175,7 @@ export const pictures = [
     fileName: "TaskMate (3)",
     fileType: "png",
     imagePath: "/assets/projects/TaskMate/TaskMate (3).png",
+    projectName: "TaskMate",
   },
   {
     id: 23,
@@ -159,6 +183,7 @@ export const pictures = [
     fileName: "TaskMate (4)",
     fileType: "png",
     imagePath: "/assets/projects/TaskMate/TaskMate (4).png",
+    projectName: "TaskMate",
   },
   {
     id: 24,
@@ -166,6 +191,7 @@ export const pictures = [
     fileName: "TaskMate (5)",
     fileType: "png",
     imagePath: "/assets/projects/TaskMate/TaskMate (5).png",
+    projectName: "TaskMate",
   },
   {
     id: 25,
@@ -173,6 +199,7 @@ export const pictures = [
     fileName: "TaskMate (6)",
     fileType: "png",
     imagePath: "/assets/projects/TaskMate/TaskMate (6).png",
+    projectName: "TaskMate",
   },
   {
     id: 26,
@@ -180,6 +207,7 @@ export const pictures = [
     fileName: "TaskMate (7)",
     fileType: "png",
     imagePath: "/assets/projects/TaskMate/TaskMate (7).png",
+    projectName: "TaskMate",
   },
   {
     id: 27,
@@ -187,6 +215,7 @@ export const pictures = [
     fileName: "TaskMate (8)",
     fileType: "png",
     imagePath: "/assets/projects/TaskMate/TaskMate (8).png",
+    projectName: "TaskMate",
   },
   {
     id: 28,
@@ -194,6 +223,7 @@ export const pictures = [
     fileName: "MoviePlus (1)",
     fileType: "png",
     imagePath: "/assets/projects/MoviePlus/MoviePlus (1).png",
+    projectName: "Movie Plus",
   },
   {
     id: 29,
@@ -201,6 +231,7 @@ export const pictures = [
     fileName: "MoviePlus (2)",
     fileType: "png",
     imagePath: "/assets/projects/MoviePlus/MoviePlus (2).png",
+    projectName: "Movie Plus",
   },
   {
     id: 30,
@@ -208,6 +239,7 @@ export const pictures = [
     fileName: "MoviePlus (3)",
     fileType: "png",
     imagePath: "/assets/projects/MoviePlus/MoviePlus (3).png",
+    projectName: "Movie Plus",
   },
   {
     id: 31,
@@ -215,6 +247,7 @@ export const pictures = [
     fileName: "MoviePlus (4)",
     fileType: "png",
     imagePath: "/assets/projects/MoviePlus/MoviePlus (4).png",
+    projectName: "Movie Plus",
   },
   {
     id: 32,
@@ -222,6 +255,7 @@ export const pictures = [
     fileName: "MoviePlus (5)",
     fileType: "png",
     imagePath: "/assets/projects/MoviePlus/MoviePlus (5).png",
+    projectName: "Movie Plus",
   },
   {
     id: 33,
@@ -229,6 +263,7 @@ export const pictures = [
     fileName: "MoviePlus (6)",
     fileType: "png",
     imagePath: "/assets/projects/MoviePlus/MoviePlus (6).png",
+    projectName: "Movie Plus",
   },
   {
     id: 34,
@@ -236,6 +271,7 @@ export const pictures = [
     fileName: "MoviePlus (7)",
     fileType: "png",
     imagePath: "/assets/projects/MoviePlus/MoviePlus (7).png",
+    projectName: "Movie Plus",
   },
   {
     id: 35,
@@ -243,6 +279,7 @@ export const pictures = [
     fileName: "MoviePlus (8)",
     fileType: "png",
     imagePath: "/assets/projects/MoviePlus/MoviePlus (8).png",
+    projectName: "Movie Plus",
   },
   {
     id: 36,
@@ -250,6 +287,7 @@ export const pictures = [
     fileName: "MoviePlus (9)",
     fileType: "png",
     imagePath: "/assets/projects/MoviePlus/MoviePlus (9).png",
+    projectName: "Movie Plus",
   },
   {
     id: 37,
@@ -257,6 +295,7 @@ export const pictures = [
     fileName: "MoviePlus (10)",
     fileType: "png",
     imagePath: "/assets/projects/MoviePlus/MoviePlus (10).png",
+    projectName: "Movie Plus",
   },
   {
     id: 38,
@@ -264,6 +303,7 @@ export const pictures = [
     fileName: "Typy (1)",
     fileType: "png",
     imagePath: "/assets/projects/Typy/Typy (1).png",
+    projectName: "Typy",
   },
   {
     id: 39,
@@ -271,6 +311,7 @@ export const pictures = [
     fileName: "Typy (2)",
     fileType: "png",
     imagePath: "/assets/projects/Typy/Typy (2).png",
+    projectName: "Typy",
   },
   {
     id: 40,
@@ -278,6 +319,7 @@ export const pictures = [
     fileName: "Typy (3)",
     fileType: "png",
     imagePath: "/assets/projects/Typy/Typy (3).png",
+    projectName: "Typy",
   },
   {
     id: 41,
@@ -285,6 +327,7 @@ export const pictures = [
     fileName: "Typy (4)",
     fileType: "png",
     imagePath: "/assets/projects/Typy/Typy (4).png",
+    projectName: "Typy",
   },
 
   {
@@ -293,6 +336,7 @@ export const pictures = [
     fileName: "MenuExtraction (1)",
     fileType: "png",
     imagePath: "/assets/projects/MenuExtraction/MenuExtraction (1).png",
+    projectName: "React Flow Menu Extraction",
   },
   {
     id: 42,
@@ -300,6 +344,7 @@ export const pictures = [
     fileName: "MenuExtraction (2)",
     fileType: "png",
     imagePath: "/assets/projects/MenuExtraction/MenuExtraction (2).png",
+    projectName: "React Flow Menu Extraction",
   },
   {
     id: 43,
@@ -307,6 +352,7 @@ export const pictures = [
     fileName: "MenuExtraction (3)",
     fileType: "png",
     imagePath: "/assets/projects/MenuExtraction/MenuExtraction (3).png",
+    projectName: "React Flow Menu Extraction",
   },
   {
     id: 44,
@@ -314,6 +360,7 @@ export const pictures = [
     fileName: "MenuExtraction (4)",
     fileType: "png",
     imagePath: "/assets/projects/MenuExtraction/MenuExtraction (4).png",
+    projectName: "React Flow Menu Extraction",
   },
   {
     id: 45,
@@ -321,6 +368,7 @@ export const pictures = [
     fileName: "MenuExtraction (5)",
     fileType: "png",
     imagePath: "/assets/projects/MenuExtraction/MenuExtraction (5).png",
+    projectName: "React Flow Menu Extraction",
   },
   {
     id: 46,
@@ -328,6 +376,7 @@ export const pictures = [
     fileName: "MenuExtraction (6)",
     fileType: "png",
     imagePath: "/assets/projects/MenuExtraction/MenuExtraction (6).png",
+    projectName: "React Flow Menu Extraction",
   },
   {
     id: 47,
@@ -335,6 +384,7 @@ export const pictures = [
     fileName: "MenuExtraction (7)",
     fileType: "png",
     imagePath: "/assets/projects/MenuExtraction/MenuExtraction (7).png",
+    projectName: "React Flow Menu Extraction",
   },
   {
     id: 48,
@@ -342,6 +392,7 @@ export const pictures = [
     fileName: "MenuExtraction (8)",
     fileType: "png",
     imagePath: "/assets/projects/MenuExtraction/MenuExtraction (8).png",
+    projectName: "React Flow Menu Extraction",
   },
   {
     id: 49,
@@ -349,6 +400,7 @@ export const pictures = [
     fileName: "MenuExtraction (9)",
     fileType: "png",
     imagePath: "/assets/projects/MenuExtraction/MenuExtraction (9).png",
+    projectName: "React Flow Menu Extraction",
   },
   {
     id: 50,
@@ -356,6 +408,7 @@ export const pictures = [
     fileName: "MenuExtraction (10)",
     fileType: "png",
     imagePath: "/assets/projects/MenuExtraction/MenuExtraction (10).png",
+    projectName: "React Flow Menu Extraction",
   },
   {
     id: 51,
@@ -363,6 +416,7 @@ export const pictures = [
     fileName: "MenuExtraction (11)",
     fileType: "png",
     imagePath: "/assets/projects/MenuExtraction/MenuExtraction (11).png",
+    projectName: "React Flow Menu Extraction",
   },
   {
     id: 52,
@@ -370,6 +424,7 @@ export const pictures = [
     fileName: "MenuExtraction (12)",
     fileType: "png",
     imagePath: "/assets/projects/MenuExtraction/MenuExtraction (12).png",
+    projectName: "React Flow Menu Extraction",
   },
   {
     id: 53,
@@ -377,6 +432,7 @@ export const pictures = [
     fileName: "MenuExtraction (13)",
     fileType: "png",
     imagePath: "/assets/projects/MenuExtraction/MenuExtraction (13).png",
+    projectName: "React Flow Menu Extraction",
   },
   {
     id: 54,
@@ -384,6 +440,7 @@ export const pictures = [
     fileName: "MenuExtraction (14)",
     fileType: "png",
     imagePath: "/assets/projects/MenuExtraction/MenuExtraction (14).png",
+    projectName: "React Flow Menu Extraction",
   },
   {
     id: 55,
@@ -391,6 +448,7 @@ export const pictures = [
     fileName: "MenuExtraction (15)",
     fileType: "png",
     imagePath: "/assets/projects/MenuExtraction/MenuExtraction (15).png",
+    projectName: "React Flow Menu Extraction",
   },
 
   {
@@ -399,6 +457,7 @@ export const pictures = [
     fileName: "Eshop (1)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (1).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 57,
@@ -406,6 +465,7 @@ export const pictures = [
     fileName: "Eshop (2)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (2).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 58,
@@ -413,6 +473,7 @@ export const pictures = [
     fileName: "Eshop (3)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (3).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 59,
@@ -420,6 +481,7 @@ export const pictures = [
     fileName: "Eshop (4)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (4).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 60,
@@ -427,6 +489,7 @@ export const pictures = [
     fileName: "Eshop (5)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (5).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 61,
@@ -434,6 +497,7 @@ export const pictures = [
     fileName: "Eshop (6)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (6).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 62,
@@ -441,6 +505,7 @@ export const pictures = [
     fileName: "Eshop (7)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (7).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 63,
@@ -448,6 +513,7 @@ export const pictures = [
     fileName: "Eshop (8)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (8).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 64,
@@ -455,6 +521,7 @@ export const pictures = [
     fileName: "Eshop (9)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (9).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 65,
@@ -462,6 +529,7 @@ export const pictures = [
     fileName: "Eshop (10)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (10).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 66,
@@ -469,6 +537,7 @@ export const pictures = [
     fileName: "Eshop (11)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (11).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 67,
@@ -476,6 +545,7 @@ export const pictures = [
     fileName: "Eshop (12)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (12).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 68,
@@ -483,6 +553,7 @@ export const pictures = [
     fileName: "Eshop (13)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (13).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 69,
@@ -490,6 +561,7 @@ export const pictures = [
     fileName: "Eshop (14)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (14).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 70,
@@ -497,6 +569,7 @@ export const pictures = [
     fileName: "Eshop (15)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (15).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 71,
@@ -504,6 +577,7 @@ export const pictures = [
     fileName: "Eshop (16)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (16).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 72,
@@ -511,6 +585,7 @@ export const pictures = [
     fileName: "Eshop (17)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (17).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 73,
@@ -518,6 +593,7 @@ export const pictures = [
     fileName: "Eshop (18)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (18).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 74,
@@ -525,6 +601,7 @@ export const pictures = [
     fileName: "Eshop (19)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (19).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 75,
@@ -532,6 +609,7 @@ export const pictures = [
     fileName: "Eshop (20)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (20).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 76,
@@ -539,6 +617,7 @@ export const pictures = [
     fileName: "Eshop (21)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (21).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 77,
@@ -546,6 +625,7 @@ export const pictures = [
     fileName: "Eshop (22)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (22).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 78,
@@ -553,6 +633,7 @@ export const pictures = [
     fileName: "Eshop (23)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (23).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 79,
@@ -560,6 +641,7 @@ export const pictures = [
     fileName: "Eshop (24)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (24).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 80,
@@ -567,6 +649,7 @@ export const pictures = [
     fileName: "Eshop (25)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (25).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 81,
@@ -574,6 +657,7 @@ export const pictures = [
     fileName: "Eshop (26)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (26).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 82,
@@ -581,6 +665,7 @@ export const pictures = [
     fileName: "Eshop (27)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (27).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 83,
@@ -588,6 +673,7 @@ export const pictures = [
     fileName: "Eshop (28)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (28).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 84,
@@ -595,6 +681,7 @@ export const pictures = [
     fileName: "Eshop (29)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (29).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 85,
@@ -602,6 +689,7 @@ export const pictures = [
     fileName: "Eshop (30)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (30).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 86,
@@ -609,6 +697,7 @@ export const pictures = [
     fileName: "Eshop (31)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (31).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 87,
@@ -616,6 +705,7 @@ export const pictures = [
     fileName: "Eshop (32)",
     fileType: "png",
     imagePath: "/assets/projects/Eshop/Eshop (32).png",
+    projectName: "Eshop: Ecommerce app",
   },
   {
     id: 88,
@@ -623,6 +713,7 @@ export const pictures = [
     fileName: "Quote (1)",
     fileType: "png",
     imagePath: "/assets/projects/Quote/Quote (1).png",
+    projectName: "Quote",
   },
   {
     id: 89,
@@ -630,6 +721,7 @@ export const pictures = [
     fileName: "Quote (2)",
     fileType: "png",
     imagePath: "/assets/projects/Quote/Quote (2).png",
+    projectName: "Quote",
   },
   {
     id: 90,
@@ -637,6 +729,7 @@ export const pictures = [
     fileName: "Quote (3)",
     fileType: "png",
     imagePath: "/assets/projects/Quote/Quote (3).png",
+    projectName: "Quote",
   },
   {
     id: 91,
@@ -644,6 +737,7 @@ export const pictures = [
     fileName: "Quote (4)",
     fileType: "png",
     imagePath: "/assets/projects/Quote/Quote (4).png",
+    projectName: "Quote",
   },
   {
     id: 92,
@@ -651,6 +745,7 @@ export const pictures = [
     fileName: "Quote (5)",
     fileType: "png",
     imagePath: "/assets/projects/Quote/Quote (5).png",
+    projectName: "Quote",
   },
   {
     id: 93,
@@ -658,6 +753,7 @@ export const pictures = [
     fileName: "Quote (6)",
     fileType: "png",
     imagePath: "/assets/projects/Quote/Quote (6).png",
+    projectName: "Quote",
   },
   {
     id: 94,
@@ -665,5 +761,6 @@ export const pictures = [
     fileName: "Quote (7)",
     fileType: "png",
     imagePath: "/assets/projects/Quote/Quote (7).png",
+    projectName: "Quote",
   },
 ];

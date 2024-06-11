@@ -4,10 +4,8 @@ export default {
   theme: {
     extend: {
       screens: {
+        xs: "412px",
         "sm-only": { max: "639px" },
-        xs: {
-          min: "420px",
-        },
       },
       gridTemplateColumns: {
         folder: "3fr 1fr repeat(3, 1fr)",
