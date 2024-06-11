@@ -5,8 +5,14 @@ function Battery() {
   const [batteryLevel, setBatteryLevel] = useState<number>(100);
 
   useEffect(() => {
+    //this thing is deprecated, but enjoy the fun on the devices
+    //you can manage :)
+    //you have to check if there is getBattery,
+    //if you do not check it, the catch at the end won't even help you
+    //run out the errors, this completly crashes the app on apple products
+    if (!("getBattery" in navigator)) return;
+    // @ts-expect-error //this is because most browsers do not support this
     navigator
-      // @ts-expect-error //this is because most browsers do not support this
       .getBattery()
       // @ts-expect-error //this is because most browsers do not support this
       .then((battery) => {
