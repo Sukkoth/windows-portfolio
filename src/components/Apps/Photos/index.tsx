@@ -6,16 +6,24 @@ function Photos() {
   const navigate = useNavigate();
   //get project specific images,
   //set the image id to the index
+  //showAllPictures is when you want the app to show all the images
+  //but you have to make it start from a specific project
   const {
-    state: { projectId, pictureIndex },
+    state: { projectId, pictureIndex, showAllPictures },
   } = useLocation();
 
-  const projectToShow = PICTURES_DATA.filter((picture) => {
-    return picture.projectId === projectId;
-  });
+  const projectToShow = showAllPictures
+    ? PICTURES_DATA
+    : PICTURES_DATA.filter((picture) => {
+        return picture.projectId === projectId;
+      });
 
   const [showing, setShowing] = useState(
-    projectToShow.length > 0 ? parseInt(pictureIndex) : 0
+    showAllPictures
+      ? PICTURES_DATA.findIndex((photo) => photo.projectId === projectId)
+      : projectToShow.length > 0
+      ? parseInt(pictureIndex)
+      : 0
   );
 
   const [loading, setLoading] = useState(true);

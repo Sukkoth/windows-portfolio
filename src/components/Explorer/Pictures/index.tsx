@@ -3,8 +3,10 @@ import { pictures as PICTURES_DATA } from "@/components/Apps/Photos/data";
 import { Photo } from "@/components/Apps/Photos/types";
 import useOutsideClick from "@/hooks/useOutsideClick";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Pictures() {
+  const navigate = useNavigate();
   const [marked, setMarked] = useState<null | string>();
   const { handler } = useOutsideClick({
     action: () => setMarked(null),
@@ -29,7 +31,16 @@ function Pictures() {
           <div
             className='size-fit md:size-full'
             key={key}
-            onDoubleClick={() => console.log("DOUBLE CLICK")}
+            onDoubleClick={() =>
+              navigate("/app/photos", {
+                state: {
+                  pictureIndex: 0,
+                  projectId: parseInt(key || "0"),
+                  backTo: location.pathname,
+                  showAllPictures: true,
+                },
+              })
+            }
             onClick={() => setMarked(key)}
           >
             <PhotoFolder
