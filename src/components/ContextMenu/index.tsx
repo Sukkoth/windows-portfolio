@@ -3,8 +3,9 @@ import ContextItem from "./ContextItem";
 type Props = {
   position: { x: number; y: number };
   onIconsChange: () => void;
+  onFullScreen: () => void;
 };
-function ContextMenu({ position, onIconsChange }: Props) {
+function ContextMenu({ position, onIconsChange, onFullScreen }: Props) {
   return (
     <div
       style={{
@@ -46,6 +47,12 @@ function ContextMenu({ position, onIconsChange }: Props) {
           icon='https://img.icons8.com/?size=100&id=1838&format=png&color=ffffff'
         >
           Show Desktop Icons
+        </ContextItem>
+        <ContextItem
+          onClick={onFullScreen}
+          icon='https://img.icons8.com/?size=100&id=CADH0XsA82tP&format=png&color=ffffff'
+        >
+          Full Screen
         </ContextItem>
       </div>
     </div>
