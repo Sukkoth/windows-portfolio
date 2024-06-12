@@ -1,3 +1,5 @@
+import { formatTime } from "@/utils/date";
+
 function Day() {
   const weekdays = [
     "Sunday",
@@ -11,8 +13,11 @@ function Day() {
   const today = new Date().getDay();
 
   return (
-    <h1 className='absolute  inset-x-0 top-36 text-center text-2xl sm:text-4xl  md:text-6xl xl:text-8xl font-anurati uppercase tracking-widest'>
+    <h1 className='absolute inset-x-0 top-36 text-center text-4xl sm:text-4xl md:text-6xl xl:text-8xl font-anurati uppercase tracking-widest'>
       {weekdays[today]}
+      <h3 className='mt-5 text-2xl sm:text-3xl md:text-5xl xl:text-7xl font-bold font-time-font'>
+        {formatTime()}
+      </h3>
     </h1>
   );
 }

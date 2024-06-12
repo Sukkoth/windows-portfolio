@@ -17,6 +17,7 @@ export default {
         anurati: ["Anurati", "sans-serif"],
         "open-sans": ["Open Sans", "sans-serif"],
         dmSans: ["DM Sans", "sans-serif"],
+        "time-font": ["Orbitron", "sans-serif"],
       },
     },
   },
