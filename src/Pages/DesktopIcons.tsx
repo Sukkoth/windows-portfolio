@@ -4,7 +4,7 @@ import DesktopIconItem from "./DesktopIconItem";
 export default function DesktopIcons() {
   const navigate = useNavigate();
   return (
-    <div className='p-5 w-fit flex flex-col gap-5 flex-wrap max-h-[90dvh]'>
+    <div className='flex flex-wrap sm-only:absolute sm-only:bottom-20 sm-only:justify-evenly sm-only:items-start sm-only:w-[70%] sm-only:right-[15%] sm:flex-col sm:gap-5 sm:w-fit  max-h-[90dvh]'>
       <DesktopIconItem
         imageUrl='https://img.icons8.com/?size=100&id=wl02Vd5WH3QG&format=png&color=000000'
         title='Documents'
