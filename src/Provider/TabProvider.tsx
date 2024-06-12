@@ -2,42 +2,33 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 //DEFINE CONTEXT
 export const TabContext = createContext<{
-  activeTab: string | null;
-  toggleTab: (setOpen: string | null) => void;
+  // eslint-disable-next-line no-unused-vars
   toggleAsleep: (state: boolean) => void;
   asleep: boolean;
 }>({
-  activeTab: null,
-  toggleTab: () => {},
   toggleAsleep: () => {},
-  asleep: false,
+  asleep: true,
 });
 
 type Props = {
   children: React.ReactNode;
 };
 function TabProvider({ children }: Props) {
-  const [activeTab, setActiveTab] = useState<string | null>(null);
-  const [asleep, setAsleep] = useState(false);
+  const [asleep, setAsleep] = useState(true);
 
-  function toggleTab(setOpen: string | null) {
-    setActiveTab(setOpen);
-  }
   function toggleAsleep(state: boolean) {
     localStorage.setItem("locked", JSON.stringify(state));
     setAsleep(state);
   }
 
   useEffect(() => {
-    setAsleep(JSON.parse(localStorage.getItem("locked") || "false"));
+    setAsleep(JSON.parse(localStorage.getItem("locked") || "true"));
   }, []);
 
   return (
     <TabContext.Provider
       value={{
         asleep,
-        activeTab,
-        toggleTab,
         toggleAsleep,
       }}
     >

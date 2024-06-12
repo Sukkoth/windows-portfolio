@@ -3,8 +3,10 @@ import { formatTime, getDayName } from "@/utils/date";
 import DayCard from "@/components/Apps/Weather/DayCard";
 import { useEffect, useState } from "react";
 import { useGetWeatherData } from "@/react-query/queries";
+import { useTab } from "@/Provider/TabProvider";
 
 function LockScreen() {
+  const { toggleAsleep } = useTab();
   const formattedDate = new Date().toLocaleDateString("en-US", {
     weekday: "long",
     month: "long",
@@ -25,7 +27,10 @@ function LockScreen() {
   const { data: weather } = useGetWeatherData(location);
 
   return (
-    <div className={`w-full h-full flex items-center flex-col select-nonel`}>
+    <div
+      onDoubleClick={() => toggleAsleep(false)}
+      className={`backdrop-blur-xl h-[100dvh] w-full flex items-center flex-col select-none text-white `}
+    >
       <h1 className='text-[10rem] font-medium tracking-wide mt-[5rem]'>
         {formatTime()}
       </h1>

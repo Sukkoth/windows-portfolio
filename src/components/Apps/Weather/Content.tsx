@@ -3,35 +3,57 @@ import { Position } from "@/services/weather/types";
 import MiniDisplay from "./MiniDisplay";
 import Display from "./Display";
 import { useGetWeatherData } from "@/react-query/queries";
+import Loader from "@/components/Loader";
 
 function Content() {
-  //default to addis ababa
-  const [location, setLocation] = useState<Position | null>({
-    latitude: 9.0192,
-    longitude: 38.7525,
-  });
+  const [location, setLocation] = useState<Position | null>(null);
+  const [locationDenied, setLocationDenied] = useState(false);
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      setLocation({
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude,
+    const getLocation = () => {
+      return new Promise<GeolocationPosition>((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(resolve, reject);
       });
-    });
+    };
+
+    const fetchLocation = async () => {
+      try {
+        const position = await getLocation();
+        setLocation({
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+        });
+      } catch (error) {
+        setLocationDenied(true);
+        //set to efault location which is addis ababa
+        setLocation({
+          latitude: 9.0192,
+          longitude: 38.7525,
+        });
+      }
+    };
+
+    fetchLocation();
   }, []);
 
-  const { data, isLoading, error, isError } = useGetWeatherData(location);
+  const { data, isLoading, isError } = useGetWeatherData(location);
 
   return (
     <>
       <div className='flex flex-col lg:flex-row rounded-2xl w-[98%] mx-auto max-h-full lg:overflow-hidden lg:mt-10'>
-        {isLoading ? (
-          <h1 className='animate-pulse text-stone-400'>Loading . . .</h1>
+        {isLoading || location === null ? (
+          <div className='w-full h-[83dvh]'>
+            <Loader />
+          </div>
         ) : isError ? (
-          <h1>{error.message}</h1>
+          <div className='w-full h-[83dvh] flex items-center justify-center'>
+            <h1 className='px-7 py-2 bg-yellow-400/20 hover:bg-yellow-400/30 rounded-xl'>
+              🥴 Could not fetch weather data
+            </h1>
+          </div>
         ) : data ? (
           <>
-            <Display weather={data} />
+            <Display weather={data} useDefaultLocation={locationDenied} />
             <MiniDisplay weather={data} />
           </>
         ) : (

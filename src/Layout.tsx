@@ -1,8 +1,11 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import TaskBar from "./components/Taskbar/Taskbar";
 import { useEffect, useMemo, useState } from "react";
+import LockScreen from "./components/LockScreen";
+import { useTab } from "./Provider/TabProvider";
 
 function Layout() {
+  const { asleep } = useTab();
   const [showPrev, setShowPrev] = useState(false);
   const [history, setHistory] = useState<string[]>([]);
 
@@ -44,6 +47,10 @@ function Layout() {
       document.removeEventListener("keyup", keyUpFunc);
     };
   }, [keysPressed]);
+
+  if (asleep) {
+    return <LockScreen />;
+  }
 
   return (
     <main className='text-white h-[100dvh] overflow-hidden relative'>
