@@ -12,7 +12,7 @@ function ContextMenu({ position, onIconsChange, onFullScreen }: Props) {
         top: `${position.y}px`,
         left: `${position.x}px`,
       }}
-      className='absolute w-[16rem] bg-stone-700/70 backdrop-blur-2xl rounded-md p-1 z-[999999] text-sm space-y-0 divide-y divide-stone-500'
+      className='absolute w-[16rem] bg-stone-700/60 backdrop-blur-[100px] rounded-md p-1 z-[999999] text-sm space-y-0 divide-y divide-stone-500'
     >
       <div>
         <ContextItem
@@ -48,6 +48,8 @@ function ContextMenu({ position, onIconsChange, onFullScreen }: Props) {
         >
           Show Desktop Icons
         </ContextItem>
+      </div>
+      <div>
         <ContextItem
           onClick={onFullScreen}
           icon='https://img.icons8.com/?size=100&id=CADH0XsA82tP&format=png&color=ffffff'

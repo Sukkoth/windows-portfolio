@@ -11,7 +11,7 @@ function ContextItem({
 }) {
   return (
     <div
-      className='hover:bg-stone-600/70 p-2 rounded-md flex gap-2 select-none'
+      className='hover:bg-stone-600/50 p-2 rounded-md flex gap-2 select-none'
       onClick={onClick}
     >
       {icon && <img src={icon} className='size-5' />}
