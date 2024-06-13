@@ -1,3 +1,4 @@
+import Loader from "@/components/Loader";
 import { useState } from "react";
 
 function Content() {
@@ -10,10 +11,8 @@ function Content() {
         src='https://taskmate-beryl.vercel.app'
       ></iframe>
       {isLoading && (
-        <div className='absolute inset-0 flex justify-center items-center backdrop-blur-xl'>
-          <h1 className='text-stone-400 text-xl animate-pulse'>
-            Loading . . . .{" "}
-          </h1>
+        <div className='absolute inset-0 top-9 flex justify-center items-center backdrop-blur-xl'>
+          <Loader />
         </div>
       )}
     </>

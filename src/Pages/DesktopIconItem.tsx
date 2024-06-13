@@ -11,7 +11,7 @@ function DesktopIconItem({ title, imageUrl, onClick, onDoubleClick }: Props) {
       onClick={onClick}
       onDoubleClick={onDoubleClick}
     >
-      <img className='size-10' src={imageUrl} alt='desktopIcon' />
+      <img className='size-8' src={imageUrl} alt='desktopIcon' />
       <p className='sm-only:hidden'>{title}</p>
     </div>
   );
