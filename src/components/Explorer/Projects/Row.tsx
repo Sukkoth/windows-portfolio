@@ -31,7 +31,8 @@ type ItemProps = {
     | "link"
     | "image"
     | "github"
-    | "textFile";
+    | "textFile"
+    | "pdfFile";
 };
 
 function Item({ children, iconType }: ItemProps) {
@@ -50,6 +51,8 @@ function Item({ children, iconType }: ItemProps) {
       "https://img.icons8.com/?size=100&id=i1z7pQ2orcJk&format=png&color=000000",
     textFile:
       "https://img.icons8.com/?size=100&id=Ygov9LJC2LzE&format=png&color=000000",
+    pdfFile:
+      "https://img.icons8.com/?size=100&id=rZObyIJRui2T&format=png&color=000000",
   };
 
   if (iconType) {

@@ -9,19 +9,23 @@ function Photos() {
   //showAllPictures is when you want the app to show all the images
   //but you have to make it start from a specific project
   const {
-    state: { projectId, pictureIndex, showAllPictures },
+    state: { projectId, pictureIndex, showAllPictures, showSingle, path },
   } = useLocation();
 
-  const projectToShow = showAllPictures
+  const projectToShow = showSingle
+    ? [{ imagePath: path }]
+    : showAllPictures
     ? PICTURES_DATA
     : PICTURES_DATA.filter((picture) => {
         return picture.projectId === projectId;
       });
 
   const [showing, setShowing] = useState(
-    showAllPictures
+    showSingle
+      ? 0
+      : showAllPictures
       ? PICTURES_DATA.findIndex((photo) => photo.projectId === projectId) +
-          parseInt(pictureIndex || "0")
+        parseInt(pictureIndex || "0")
       : projectToShow.length > 0
       ? parseInt(pictureIndex)
       : 0
@@ -34,6 +38,7 @@ function Photos() {
   };
 
   function handleNav(increment: boolean = false) {
+    if (projectToShow.length < 2) return;
     setLoading(true); //set loading true when image resets,
     //it will be set to false when the image loads
     if (increment) {
