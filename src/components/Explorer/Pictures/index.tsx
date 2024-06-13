@@ -31,16 +31,7 @@ function Pictures() {
           <div
             className='size-fit md:size-full'
             key={key}
-            onDoubleClick={() =>
-              navigate("/app/photos", {
-                state: {
-                  pictureIndex: 0,
-                  projectId: parseInt(key || "0"),
-                  backTo: location.pathname,
-                  showAllPictures: true,
-                },
-              })
-            }
+            onDoubleClick={() => navigate(`${key}`)}
             onClick={() => setMarked(key)}
           >
             <PhotoFolder

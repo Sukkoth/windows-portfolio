@@ -17,6 +17,7 @@ import Detail from "@/components/Explorer/Projects/Detail";
 import Images from "@/components/Explorer/Projects/Detail/Images";
 import Notepad from "@/components/Apps/Notepad";
 import Photos from "@/components/Apps/Photos";
+import ListView from "./components/Explorer/Pictures/ListView";
 
 function App() {
   return (
@@ -38,7 +39,10 @@ function App() {
               <Route path=':projectId/images' element={<Images />} />
             </Route>
             <Route path='documents' element={<Documents />} />
-            <Route path='pictures' element={<Pictures />} />
+            <Route path='pictures'>
+              <Route index element={<Pictures />} />
+              <Route path=':projectId' element={<ListView />} />
+            </Route>
             <Route path='links' element={<Links />} />
             <Route path='about' element={<About />} />
           </Route>

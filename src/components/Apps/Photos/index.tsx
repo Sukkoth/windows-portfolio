@@ -20,7 +20,8 @@ function Photos() {
 
   const [showing, setShowing] = useState(
     showAllPictures
-      ? PICTURES_DATA.findIndex((photo) => photo.projectId === projectId)
+      ? PICTURES_DATA.findIndex((photo) => photo.projectId === projectId) +
+          parseInt(pictureIndex || "0")
       : projectToShow.length > 0
       ? parseInt(pictureIndex)
       : 0

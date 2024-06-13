@@ -1,10 +1,11 @@
-import { useNavigate, useParams } from "react-router-dom";
-import Row from "../Row";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+import Row from "../Projects/Row";
 import { pictures } from "@/components/Apps/Photos/data";
 
-function Images() {
+function ListView() {
   const { projectId } = useParams();
   const navigate = useNavigate();
+  const { state } = useLocation();
 
   const projectPictures = pictures.filter(
     (picture) => picture?.projectId === parseInt(projectId || "0")
@@ -25,11 +26,12 @@ function Images() {
             onDoubleClick={() =>
               navigate("/app/photos", {
                 state: {
-                  pictureId: picture.id,
-                  pictureIndex: index,
+                  showAllPictures: true,
                   projectId: parseInt(projectId || "0"),
+                  pictureIndex: index,
                   backTo: location.pathname,
                 },
+                replace: false,
               })
             }
           >
@@ -38,7 +40,7 @@ function Images() {
               <Row.Item>
                 <span className='uppercase'>{picture.fileType} file</span>{" "}
               </Row.Item>
-              <Row.Item>{projectId}</Row.Item>
+              <Row.Item>{state?.projectId}</Row.Item>
               <Row.Item>Updated at</Row.Item>
             </Row>
           </div>
@@ -48,4 +50,4 @@ function Images() {
   );
 }
 
-export default Images;
+export default ListView;
