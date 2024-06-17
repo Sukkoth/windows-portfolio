@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 body {
-  background-image: url("/assets/homepage0.png");
+  background-image: url("/assets/homepage.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
