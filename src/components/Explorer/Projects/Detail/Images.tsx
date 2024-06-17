@@ -19,30 +19,34 @@ function Images() {
           <Row.Title>Project Id</Row.Title>
           <Row.Title>Updated at</Row.Title>
         </Row>
-        {projectPictures.map((picture, index) => (
-          <div
-            key={picture.id}
-            onDoubleClick={() =>
-              navigate("/app/photos", {
-                state: {
-                  pictureId: picture.id,
-                  pictureIndex: index,
-                  projectId: parseInt(projectId || "0"),
-                  backTo: location.pathname,
-                },
-              })
-            }
-          >
-            <Row gridClass='grid-cols-[3fr_1fr_repeat(2,_1fr)]'>
-              <Row.Item iconType='image'>{picture.fileName}</Row.Item>
-              <Row.Item>
-                <span className='uppercase'>{picture.fileType} file</span>{" "}
-              </Row.Item>
-              <Row.Item>{projectId}</Row.Item>
-              <Row.Item>Updated at</Row.Item>
-            </Row>
-          </div>
-        ))}
+        {projectPictures.length > 0 ? (
+          projectPictures.map((picture, index) => (
+            <div
+              key={picture.id}
+              onDoubleClick={() =>
+                navigate("/app/photos", {
+                  state: {
+                    pictureId: picture.id,
+                    pictureIndex: index,
+                    projectId: parseInt(projectId || "0"),
+                    backTo: location.pathname,
+                  },
+                })
+              }
+            >
+              <Row gridClass='grid-cols-[3fr_1fr_repeat(2,_1fr)]'>
+                <Row.Item iconType='image'>{picture.fileName}</Row.Item>
+                <Row.Item>
+                  <span className='uppercase'>{picture.fileType} file</span>{" "}
+                </Row.Item>
+                <Row.Item>{projectId}</Row.Item>
+                <Row.Item>Updated at</Row.Item>
+              </Row>
+            </div>
+          ))
+        ) : (
+          <p className='col-span-6 mt-4 text-center'>No items found.</p>
+        )}
       </div>
     </div>
   );
