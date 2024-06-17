@@ -6,8 +6,10 @@ export function getFormattedDate(date: Date = new Date()) {
   return `${month}/${day}/${year}`;
 }
 
-export function formatTime() {
-  const date = new Date();
+export function formatTime(timeToFormat: Date | string = new Date()) {
+  let date;
+  if (typeof timeToFormat === "string") date = new Date(timeToFormat);
+  else date = timeToFormat;
   const hours = date.getHours().toString().padStart(2, "0");
   const minutes = date.getMinutes().toString().padStart(2, "0");
 
