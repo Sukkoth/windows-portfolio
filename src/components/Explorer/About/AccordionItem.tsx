@@ -13,7 +13,9 @@ function AccordionItem({ title, body, open: defaultOpen = false }: Props) {
         onClick={() => setOpen((prev) => !prev)}
         className='flex justify-between items-start hover:text-gray-300 cursor-pointer'
       >
-        <h1 className='md:text-lg pr-3 text-gray-20 font-light'>{title}</h1>
+        <h1 className='text-lg md:text-xl pr-3 text-gray-20 font-light'>
+          {title}
+        </h1>
         <div
           className={`text-2xl ${
             open ? "rotate-90" : "-rotate-90"
