@@ -1,9 +1,9 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import Layout from "@/Layout";
+import Layout from "@/Layouts/Layout";
 import Home from "@/Pages/Home";
 
 import "@/App.css";
-import FolderView from "@/components/Apps/View/FolderView";
+import FolderView from "@/Layouts/FolderView";
 import Github from "@/components/Apps/Github";
 import Weather from "@/components/Apps/Weather";
 import Todo from "@/components/Apps/Todo";

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import ViewNav from "./ViewNav";
+import ViewNav from "@/Layouts/ViewNav";
 
 function FolderView({
   children,

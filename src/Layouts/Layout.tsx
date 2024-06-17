@@ -1,8 +1,8 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import TaskBar from "./components/Taskbar/Taskbar";
+import TaskBar from "@/components/Taskbar/Taskbar";
 import { useEffect, useMemo, useState } from "react";
-import LockScreen from "./components/LockScreen";
-import { useTab } from "./Provider/TabProvider";
+import LockScreen from "@/components/LockScreen";
+import { useTab } from "@/Provider/TabProvider";
 
 function Layout() {
   const { asleep } = useTab();

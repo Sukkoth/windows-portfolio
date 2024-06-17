@@ -6,6 +6,7 @@ type Props = {
   type: "folder" | "app";
 };
 
+//this is the minimize and x on everything
 function ViewNav({ onSetView, type = "app", onClose }: Props) {
   const navigate = useNavigate();
   const { pathname, state } = useLocation();
