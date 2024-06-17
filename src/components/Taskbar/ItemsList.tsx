@@ -29,7 +29,7 @@ function ItemsList() {
       </div>
       <TaskbarItem
         to='/explorer/projects'
-        imgUrl='https://img.icons8.com/?size=100&id=dINnkNb1FBl4&format=png&color=000000'
+        imgUrl='https://img.icons8.com/?size=100&id=GzCW12vGkSHM&format=png&color=000000'
       />
       <TaskbarItem
         to='/app/github'
