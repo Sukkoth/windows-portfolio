@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "@/Layout";
 import Home from "@/Pages/Home";
 
@@ -32,6 +32,7 @@ function App() {
           <Route path='photos' element={<Photos />} />
         </Route>
         <Route path='explorer' element={<FolderView type='folder' />}>
+          <Route index element={<Navigate to='projects' />} />
           <Route element={<ExplorerView />}>
             <Route path='projects'>
               <Route index element={<Projects />} />

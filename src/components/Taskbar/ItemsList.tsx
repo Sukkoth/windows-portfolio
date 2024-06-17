@@ -28,7 +28,8 @@ function ItemsList() {
         />
       </div>
       <TaskbarItem
-        to='/explorer/projects'
+        explorer
+        to='/explorer'
         imgUrl='https://img.icons8.com/?size=100&id=GzCW12vGkSHM&format=png&color=000000'
       />
       <TaskbarItem
