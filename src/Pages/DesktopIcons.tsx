@@ -30,6 +30,11 @@ export default function DesktopIcons() {
         title='About'
         onDoubleClick={() => navigate("/explorer/about")}
       />
+      <DesktopIconItem
+        imageUrl='https://img.icons8.com/?size=100&id=VQOfeAx5KWTK&format=png&color=000000'
+        title='Help'
+        onDoubleClick={() => navigate("/app/help")}
+      />
     </div>
   );
 }

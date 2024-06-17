@@ -18,6 +18,7 @@ import Images from "@/components/Explorer/Projects/Detail/Images";
 import Notepad from "@/components/Apps/Notepad";
 import Photos from "@/components/Apps/Photos";
 import ListView from "./components/Explorer/Pictures/ListView";
+import Help from "@/components/Apps/Help";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path='todo' element={<Todo />} />
           <Route path='notepad' element={<Notepad />} />
           <Route path='photos' element={<Photos />} />
+          <Route path='help' element={<Help />} />
         </Route>
         <Route path='explorer' element={<FolderView type='folder' />}>
           <Route index element={<Navigate to='projects' />} />

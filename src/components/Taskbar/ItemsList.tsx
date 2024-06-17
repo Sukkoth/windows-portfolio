@@ -50,6 +50,18 @@ function ItemsList() {
           imgUrl='https://img.icons8.com/?size=100&id=Ygov9LJC2LzE&format=png&color=000000'
         />
       )}
+      {pathname.includes("app/help") && (
+        <TaskbarItem
+          to='/app/help'
+          imgUrl='https://img.icons8.com/?size=100&id=VQOfeAx5KWTK&format=png&color=000000'
+        />
+      )}
+      {pathname.includes("app/photos") && (
+        <TaskbarItem
+          to='/app/photos'
+          imgUrl='https://img.icons8.com/?size=100&id=QdAGIsBAJMG7&format=png&color=000000'
+        />
+      )}
     </div>
   );
 }
