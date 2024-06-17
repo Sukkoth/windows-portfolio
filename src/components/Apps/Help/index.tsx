@@ -14,6 +14,18 @@ function Help() {
         If you have any feedback or any feature request, contact me using social
         links provided. 🔗
       </p>
+      <p>
+        And{" "}
+        <span className='text-blue-400 uppercase font-bold underline'>
+          <a
+            href='https://github.com/Sukkoth/windows-portfolio/tree/with-router'
+            target='_blank'
+          >
+            here
+          </a>
+        </span>{" "}
+        is the link to the repo. Have fun with it. 😉
+      </p>
       <p className='my-5 font-bold underline'>
         Here are some tips to use this app. 💡
       </p>
