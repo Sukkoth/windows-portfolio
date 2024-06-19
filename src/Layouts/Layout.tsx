@@ -1,8 +1,10 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import TaskBar from "@/components/Taskbar/Taskbar";
-import { useEffect, useMemo, useState } from "react";
-import LockScreen from "@/components/LockScreen";
+import { Suspense, lazy, useEffect, useMemo, useState } from "react";
 import { useTab } from "@/Provider/TabProvider";
+import Main from "@/components/Suspense/Main";
+
+const LockScreen = lazy(() => import("@/components/LockScreen"));
 
 function Layout() {
   const { asleep } = useTab();
@@ -49,7 +51,11 @@ function Layout() {
   }, [keysPressed]);
 
   if (asleep) {
-    return <LockScreen />;
+    return (
+      <Suspense fallback={<Main />}>
+        <LockScreen />
+      </Suspense>
+    );
   }
 
   return (
