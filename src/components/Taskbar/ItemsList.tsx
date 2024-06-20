@@ -2,8 +2,10 @@ import TaskbarItem from "./TaskbarItem";
 import { useCallback, useRef, useState } from "react";
 import Start from "../Start";
 import { useLocation } from "react-router-dom";
+import { useTab } from "@/Provider/TabProvider";
 
 function ItemsList() {
+  const { toggleTerminal, showTerminal } = useTab();
   const [opened, setOpened] = useState(false);
   const startRef = useRef<HTMLDivElement | null>(null);
   const { pathname } = useLocation();
@@ -44,6 +46,17 @@ function ItemsList() {
         to='/app/todo'
         imgUrl='https://img.icons8.com/?size=100&id=HpPqCqynotVp&format=png&color=000000'
       />
+      <div
+        onClick={() => toggleTerminal(!showTerminal)}
+        ref={startRef}
+        className={`task-item ${showTerminal ? "active" : ""}`}
+      >
+        <img
+          className='size-8'
+          src='https://img.icons8.com/?size=100&id=WbRVMGxHh74X&format=png&color=000000'
+        />
+      </div>
+
       {pathname.includes("app/notepad") && (
         <TaskbarItem
           to='/app/notepad'

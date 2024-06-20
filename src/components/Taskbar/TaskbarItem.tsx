@@ -1,3 +1,5 @@
+import { useTab } from "@/Provider/TabProvider";
+import { memo } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 type Props = { imgUrl: string; to: string; explorer?: boolean };
@@ -5,7 +7,7 @@ type Props = { imgUrl: string; to: string; explorer?: boolean };
 //the explorer is used to track the explorer routes since it has nested routes
 function TaskbarItem({ imgUrl, to, explorer = false }: Props) {
   const { pathname } = useLocation();
-
+  const { toggleTerminal } = useTab();
   //if pathname is the same, => close the app
   //else, => open the app
   //it's like a toggle button
@@ -17,6 +19,7 @@ function TaskbarItem({ imgUrl, to, explorer = false }: Props) {
 
   return (
     <Link
+      onClick={() => toggleTerminal(false)}
       {...redirectProps}
       className={`task-item ${
         pathname === to || (explorer && pathname.includes("explorer"))
@@ -29,4 +32,5 @@ function TaskbarItem({ imgUrl, to, explorer = false }: Props) {
   );
 }
 
-export default TaskbarItem;
+const MemoizedTaskbarItem = memo(TaskbarItem);
+export default MemoizedTaskbarItem;

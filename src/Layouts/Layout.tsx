@@ -3,11 +3,12 @@ import TaskBar from "@/components/Taskbar/Taskbar";
 import { Suspense, lazy, useEffect, useMemo, useState } from "react";
 import { useTab } from "@/Provider/TabProvider";
 import Main from "@/components/Suspense/Main";
+import Terminal from "@/components/Apps/Terminal";
 
 const LockScreen = lazy(() => import("@/components/LockScreen"));
 
 function Layout() {
-  const { asleep } = useTab();
+  const { asleep, showTerminal } = useTab();
   const [showPrev, setShowPrev] = useState(false);
   const [history, setHistory] = useState<string[]>([]);
 
@@ -80,6 +81,7 @@ function Layout() {
         )}
       </div>
       <TaskBar />
+      {showTerminal && <Terminal />}
     </main>
   );
 }

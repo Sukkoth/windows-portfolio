@@ -11,7 +11,6 @@ function Notepad() {
     (project) => parseInt(projectId) === project.id
   );
 
-  console.log({ projectId, project });
   return (
     <div className='p-2 pb-20 overflow-y-auto h-full bg-stone-800'>
       <div className='outline-none'>

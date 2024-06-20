@@ -5,9 +5,14 @@ export const TabContext = createContext<{
   // eslint-disable-next-line no-unused-vars
   toggleAsleep: (state: boolean) => void;
   asleep: boolean;
+  showTerminal: boolean;
+  // eslint-disable-next-line no-unused-vars
+  toggleTerminal: (state: boolean) => void;
 }>({
   toggleAsleep: () => {},
   asleep: true,
+  showTerminal: false,
+  toggleTerminal: () => {},
 });
 
 type Props = {
@@ -15,10 +20,14 @@ type Props = {
 };
 function TabProvider({ children }: Props) {
   const [asleep, setAsleep] = useState(true);
+  const [showTerminal, setShowTerminal] = useState(false);
 
   function toggleAsleep(state: boolean) {
     localStorage.setItem("locked", JSON.stringify(state));
     setAsleep(state);
+  }
+  function toggleTerminal(state: boolean) {
+    setShowTerminal(state);
   }
 
   useEffect(() => {
@@ -30,6 +39,8 @@ function TabProvider({ children }: Props) {
       value={{
         asleep,
         toggleAsleep,
+        showTerminal,
+        toggleTerminal,
       }}
     >
       {children}

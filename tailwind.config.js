@@ -14,10 +14,11 @@ export default {
         "hover-color": "#303032",
       },
       fontFamily: {
-        anurati: ["Anurati", "sans-serif"],
-        "open-sans": ["Open Sans", "sans-serif"],
-        dmSans: ["DM Sans", "sans-serif"],
-        "time-font": ["Orbitron", "sans-serif"],
+        anurati: ["Anurati", "sans-serif"], //day font
+        firacode: ["Fira Code", "monospace"], //terminal font
+        dmSans: ["DM Sans", "sans-serif"], //body font
+        "time-font": ["Orbitron", "sans-serif"], //time under day font
+        "terminal-header": ["Bungee Spice", "sans-serif"], //terminal header font
       },
     },
   },
@@ -40,6 +41,18 @@ export default {
         },
       };
       addUtilities(newUtilities, ["hover"]);
+    },
+    function ({ addUtilities }) {
+      const newUtilities = {
+        // width: 0;
+        // height: 0;
+        ".triangle-left": {
+          borderTop: "15px solid transparent",
+          borderBottom: "15px solid transparent",
+          borderLeft: "15px solid",
+        },
+      };
+      addUtilities(newUtilities, ["div"]);
     },
   ],
 };
