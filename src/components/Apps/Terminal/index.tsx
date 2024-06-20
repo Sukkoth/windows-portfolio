@@ -18,7 +18,7 @@ function Terminal() {
     <div
       className={`absolute font-firacode ${
         min ? "inset-28" : "inset-0"
-      } bg-[#242535df] backdrop-blur-md shadow-2xl shadow-stone-900 rounded-2xl`}
+      } bg-[#242535eb] backdrop-blur-md shadow-2xl shadow-stone-900 rounded-2xl`}
     >
       <ViewNav
         type='app'

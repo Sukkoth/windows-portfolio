@@ -60,7 +60,7 @@ function Layout() {
   }
 
   return (
-    <main className='text-white h-[100dvh] overflow-hidden relative'>
+    <main className='text-white h-[100dvh] text-sm overflow-hidden relative'>
       <div className='h-[94.8dvh]'>
         <Outlet />
         {showPrev && (

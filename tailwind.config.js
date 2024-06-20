@@ -16,7 +16,7 @@ export default {
       fontFamily: {
         anurati: ["Anurati", "sans-serif"], //day font
         firacode: ["Fira Code", "monospace"], //terminal font
-        dmSans: ["DM Sans", "sans-serif"], //body font
+        segoe: ["Segoe UI Variable Static Small", "sans-serif"], //body font
         "time-font": ["Orbitron", "sans-serif"], //time under day font
         "terminal-header": ["Bungee Spice", "sans-serif"], //terminal header font
       },
