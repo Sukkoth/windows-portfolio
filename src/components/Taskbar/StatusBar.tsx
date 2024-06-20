@@ -5,7 +5,11 @@ import Time from "./Time";
 import HiddenIcons from "./HiddenIcons";
 import useOutsideClick from "@/hooks/useOutsideClick";
 
-function StatusBar() {
+function StatusBar({
+  toggleQuickSettings,
+}: {
+  toggleQuickSettings: () => void;
+}) {
   const [showHiddenIcons, setShowHiddenIcons] = useState(false);
   const blackListRef = useRef<HTMLDivElement | null>(null);
   const { handler } = useOutsideClick({
@@ -32,8 +36,12 @@ function StatusBar() {
           }`}
         />
       </div>
-      <div className='flex items-center gap-2 relative before:content-[" "] before:-left-4 w-full h-full before:-right-4 before:-top-3 before:-bottom-3 before:bg-hover-color before:absolute before:-z-10 before:rounded-lg before:hidden hover:before:block cursor-pointer  before:shadow-inner before:shadow-stone-700'>
+      <div
+        onClick={toggleQuickSettings}
+        className='flex items-center gap-2 relative before:content-[" "] before:-left-4 w-full h-full before:-right-4 before:-top-3 before:-bottom-3 before:bg-hover-color before:absolute before:-z-10 before:rounded-lg before:hidden hover:before:block cursor-pointer  before:shadow-inner before:shadow-stone-700'
+      >
         <Network />
+
         <Battery />
       </div>
       <Time />

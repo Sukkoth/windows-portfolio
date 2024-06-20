@@ -4,11 +4,13 @@ import { Suspense, lazy, useEffect, useMemo, useState } from "react";
 import { useTab } from "@/Provider/TabProvider";
 import Main from "@/components/Suspense/Main";
 import Terminal from "@/components/Apps/Terminal";
+import QuickSettings from "@/components/QuickSettings";
 
 const LockScreen = lazy(() => import("@/components/LockScreen"));
 
 function Layout() {
   const { asleep, showTerminal } = useTab();
+  const [showQuickSettings, setShowQuickSettings] = useState(false);
   const [showPrev, setShowPrev] = useState(false);
   const [history, setHistory] = useState<string[]>([]);
 
@@ -80,7 +82,10 @@ function Layout() {
           </div>
         )}
       </div>
-      <TaskBar />
+      <TaskBar
+        toggleQuickSettings={() => setShowQuickSettings((prev) => !prev)}
+      />
+      <QuickSettings active={showQuickSettings} />
       {showTerminal && <Terminal />}
     </main>
   );
