@@ -1,16 +1,27 @@
 import { useState } from "react";
 
 type Props = {
+  active?: boolean;
   double?: boolean;
   imageUrl: string;
   title: string;
+  onClick?: () => void;
 };
-function QuickSettingItem({ double = false, imageUrl, title }: Props) {
-  const [active, setActive] = useState(false);
+function QuickSettingItem({
+  active: defaultActive = false,
+  double = false,
+  imageUrl,
+  title,
+  onClick,
+}: Props) {
+  const [active, setActive] = useState(defaultActive);
   return (
     <div>
       <div
-        onClick={() => setActive((prev) => !prev)}
+        onClick={() => {
+          setActive((prev) => !prev);
+          onClick && onClick();
+        }}
         className={`flex items-center justify-evenly h-10 rounded-md overflow-hidden border border-stone-600 ${
           !active
             ? "hover:bg-stone-600/10"

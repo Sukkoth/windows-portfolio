@@ -1,4 +1,10 @@
+import { useEffect, useState } from "react";
+
 function RangeQuickSettings() {
+  const [brightness, setBrightness] = useState(100);
+  useEffect(() => {
+    document.body.style.filter = `brightness(${brightness}%)`;
+  }, [brightness]);
   return (
     <>
       <div className='w-full flex gap-6 mt-10'>
@@ -12,6 +18,10 @@ function RangeQuickSettings() {
           type='range'
           name='brightness'
           id=''
+          min={0}
+          max={100}
+          value={brightness}
+          onChange={(e) => setBrightness(parseInt(e.target.value))}
         />
       </div>
       <div className='w-full flex gap-6 mt-4'>

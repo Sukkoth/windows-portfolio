@@ -14,7 +14,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-
+  transition: filter 0.5s ease;
   @apply font-segoe bg-stone-800;
 }
 

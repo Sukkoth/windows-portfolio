@@ -1,6 +1,22 @@
+import { useEffect, useState } from "react";
 import QuickSettingItem from "./QuickSettingItem";
 
 function QuickSettingsList() {
+  const [isNightLightOn, setIsNightLightOn] = useState(false);
+
+  useEffect(() => {
+    if (isNightLightOn) {
+      document.body.style.filter =
+        "sepia(100%) hue-rotate(-30deg) saturate(150%)";
+    } else {
+      document.body.style.filter = "none";
+    }
+  }, [isNightLightOn]);
+
+  const handleToggle = () => {
+    setIsNightLightOn((prevState) => !prevState);
+  };
+
   return (
     <div className='flex flex-wrap items-center justify-between gap-3 select-none'>
       <QuickSettingItem
@@ -22,6 +38,8 @@ function QuickSettingsList() {
         title='Battery Saver'
       />
       <QuickSettingItem
+        active={isNightLightOn}
+        onClick={handleToggle}
         imageUrl='https://img.icons8.com/?size=100&id=82718&format=png&color=ffffff'
         title='Night Light'
       />
