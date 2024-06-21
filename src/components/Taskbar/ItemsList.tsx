@@ -48,7 +48,6 @@ function ItemsList() {
       />
       <div
         onClick={() => toggleTerminal(!showTerminal)}
-        ref={startRef}
         className={`task-item ${showTerminal ? "active" : ""}`}
       >
         <img
