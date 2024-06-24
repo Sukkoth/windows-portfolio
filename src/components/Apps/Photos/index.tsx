@@ -56,7 +56,7 @@ function Photos() {
 
   return (
     <div className='overflow-hidden h-full bg-stone-900'>
-      <div className='outline-none h-full object-cover flex flex-col items-center justify-center'>
+      <div className='outline-none h-full object-cover flex flex-col items-center justify-start pt-10 md:justify-center'>
         {projectToShow.length > 0 ? (
           <>
             <div className='w-full lg:w-[80%] h-[80%] relative'>
@@ -75,7 +75,7 @@ function Photos() {
                 className='object-contain size-full'
               />
             </div>
-            <div className='mt-3 w-[50%] p-2 flex justify-between items-center'>
+            <div className='w-[50%] p-2 flex justify-between items-center'>
               <MenuItem
                 onClick={() => handleNav()}
                 imageUrl='https://img.icons8.com/?size=100&id=1806&format=png&color=ffffff'
@@ -115,7 +115,7 @@ function MenuItem({ imageUrl, onClick }: MenuItemProps) {
       src={imageUrl}
       alt='prev'
       onClick={onClick}
-      className='size-12 relative cursor-pointer hover:scale-110 p-2 duration-300 hover:bg-stone-900 hover:rounded-xl'
+      className='size-10 relative cursor-pointer hover:scale-110 p-2 duration-300 hover:bg-stone-900 hover:rounded-xl'
     />
   );
 }
