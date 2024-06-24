@@ -1,13 +1,18 @@
 import ContextMenu from "@/components/ContextMenu";
 import Day from "@/components/Day";
 import { useEffect, useState } from "react";
-import DesktopIcons from "./DesktopIcons";
+import DesktopIcons from "@/Pages/DesktopIcons";
+
+type IconSize = "small" | "medium" | "large";
 
 function Home() {
   const [showDesktopIcons, setShowDesktopIcons] = useState(true);
   const [showMenu, setShowMenu] = useState(false);
   const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
   const [isFullScreen, setIsFullScreen] = useState<boolean>(false);
+  const [desktopIconSize, setDesktopIconSize] = useState<IconSize>(
+    (localStorage.getItem("desktopIconSize") as IconSize) || "small"
+  );
 
   //display right click menus
   const handleRightClick = (
@@ -26,6 +31,24 @@ function Home() {
   //toggle show desktop icons
   function handleChangeShowDesktopIcons() {
     setShowDesktopIcons((prev) => !prev);
+  }
+
+  //toggle fullscreen
+  const handleToggleFullScreen = () => {
+    if (isFullScreen) {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    } else {
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+      }
+    }
+  };
+
+  function toggleDesktopIconSize(iconSize: IconSize) {
+    setDesktopIconSize(iconSize);
+    localStorage.setItem("desktopIconSize", JSON.stringify(iconSize));
   }
 
   //listen for fullscreen
@@ -56,17 +79,12 @@ function Home() {
     };
   }, []);
 
-  //toggle fullscreen
-  const handleToggleFullScreen = () => {
-    if (isFullScreen) {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      }
-    } else {
-      if (document.documentElement.requestFullscreen) {
-        document.documentElement.requestFullscreen();
-      }
-    }
+  const contextMenuProps = {
+    iconSize: desktopIconSize,
+    toggleDesktopIconSize: toggleDesktopIconSize,
+    position: menuPosition,
+    onIconsChange: handleChangeShowDesktopIcons,
+    onFullScreen: handleToggleFullScreen,
   };
 
   return (
@@ -75,15 +93,9 @@ function Home() {
       onContextMenu={handleRightClick}
       onClick={handleClick}
     >
-      {showMenu && (
-        <ContextMenu
-          position={menuPosition}
-          onIconsChange={handleChangeShowDesktopIcons}
-          onFullScreen={handleToggleFullScreen}
-        />
-      )}
+      {showMenu && <ContextMenu {...contextMenuProps} />}
       <Day />
-      {showDesktopIcons && <DesktopIcons />}
+      {showDesktopIcons && <DesktopIcons iconSize={desktopIconSize} />}
     </div>
   );
 }
