@@ -27,6 +27,10 @@ const Notepad = withSuspense(
   lazy(() => import("@/components/Apps/Notepad")),
   "app"
 );
+const VSCode = withSuspense(
+  lazy(() => import("@/components/Apps/VSCode")),
+  "app"
+);
 const Help = withSuspense(
   lazy(() => import("@/components/Apps/Help")),
   "app"
@@ -107,4 +111,5 @@ export const APPS = {
   Photos,
   Notepad,
   Help,
+  VSCode,
 };

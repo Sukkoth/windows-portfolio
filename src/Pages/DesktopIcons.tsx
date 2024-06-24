@@ -35,6 +35,11 @@ export default function DesktopIcons() {
         title='Help'
         onDoubleClick={() => navigate("/app/help")}
       />
+      <DesktopIconItem
+        imageUrl='https://img.icons8.com/?size=100&id=0OQR1FYCuA9f&format=png&color=000000'
+        title='VSCode'
+        onDoubleClick={() => navigate("/app/vscode")}
+      />
     </div>
   );
 }

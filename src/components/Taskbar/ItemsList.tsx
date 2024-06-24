@@ -56,12 +56,18 @@ function ItemsList() {
         />
       </div>
 
+      <TaskbarItem
+        to='/app/vscode'
+        imgUrl='https://img.icons8.com/?size=100&id=0OQR1FYCuA9f&format=png&color=000000'
+      />
+
       {pathname.includes("app/notepad") && (
         <TaskbarItem
           to='/app/notepad'
           imgUrl='https://img.icons8.com/?size=100&id=Ygov9LJC2LzE&format=png&color=000000'
         />
       )}
+
       {pathname.includes("app/help") && (
         <TaskbarItem
           to='/app/help'
