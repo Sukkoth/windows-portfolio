@@ -56,10 +56,12 @@ function ItemsList() {
         />
       </div>
 
-      <TaskbarItem
-        to='/app/stackblitz'
-        imgUrl='https://developer.stackblitz.com/img/theme/docs-logo.svg'
-      />
+      {pathname.includes("app/stackblitz") && (
+        <TaskbarItem
+          to='/app/stackblitz'
+          imgUrl='https://developer.stackblitz.com/img/theme/docs-logo.svg'
+        />
+      )}
 
       {pathname.includes("app/notepad") && (
         <TaskbarItem
