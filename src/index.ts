@@ -28,7 +28,7 @@ const Notepad = withSuspense(
   "app"
 );
 const VSCode = withSuspense(
-  lazy(() => import("@/components/Apps/VSCode")),
+  lazy(() => import("@/components/Apps/StackBlitz")),
   "app"
 );
 const Help = withSuspense(

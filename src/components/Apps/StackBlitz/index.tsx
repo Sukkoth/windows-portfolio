@@ -8,7 +8,7 @@ function Todo() {
       <iframe
         onLoad={() => setIsLoading(false)}
         className='webview h-full w-full'
-        src='https://vscode.dev'
+        src='https://stackblitz.com/github/sukkoth/stack-env?embed=1&file=README.md'
       ></iframe>
       {isLoading && (
         <div className='absolute inset-0 top-9 flex justify-center items-center backdrop-blur-xl'>

@@ -57,8 +57,8 @@ function ItemsList() {
       </div>
 
       <TaskbarItem
-        to='/app/vscode'
-        imgUrl='https://img.icons8.com/?size=100&id=0OQR1FYCuA9f&format=png&color=000000'
+        to='/app/stackblitz'
+        imgUrl='https://developer.stackblitz.com/img/theme/docs-logo.svg'
       />
 
       {pathname.includes("app/notepad") && (

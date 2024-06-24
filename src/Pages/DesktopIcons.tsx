@@ -36,9 +36,9 @@ export default function DesktopIcons() {
         onDoubleClick={() => navigate("/app/help")}
       />
       <DesktopIconItem
-        imageUrl='https://img.icons8.com/?size=100&id=0OQR1FYCuA9f&format=png&color=000000'
-        title='VSCode'
-        onDoubleClick={() => navigate("/app/vscode")}
+        imageUrl='https://developer.stackblitz.com/img/theme/docs-logo.svg'
+        title='StackBlitz Editor'
+        onDoubleClick={() => navigate("/app/stackblitz")}
       />
     </div>
   );

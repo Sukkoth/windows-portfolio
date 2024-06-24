@@ -17,7 +17,7 @@ function App() {
           <Route path='todo' element={<ROUTES.APPS.Todo />} />
           <Route path='notepad' element={<ROUTES.APPS.Notepad />} />
           <Route path='photos' element={<ROUTES.APPS.Photos />} />
-          <Route path='vscode' element={<ROUTES.APPS.VSCode />} />
+          <Route path='stackblitz' element={<ROUTES.APPS.VSCode />} />
           <Route path='help' element={<ROUTES.APPS.Help />} />
         </Route>
         <Route path='explorer' element={<FolderView type='folder' />}>
