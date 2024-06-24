@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import Battery from "./Battery";
 import Network from "./Network";
 import Time from "./Time";
-import HiddenIcons from "./HiddenIcons";
 import useOutsideClick from "@/hooks/useOutsideClick";
 
 function StatusBar({
