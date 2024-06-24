@@ -7,8 +7,12 @@ import useOutsideClick from "@/hooks/useOutsideClick";
 
 function StatusBar({
   toggleQuickSettings,
+  toggleNotificationPanel,
+  toggleHiddenIcons,
 }: {
   toggleQuickSettings: () => void;
+  toggleNotificationPanel: () => void;
+  toggleHiddenIcons: () => void;
 }) {
   const [showHiddenIcons, setShowHiddenIcons] = useState(false);
   const blackListRef = useRef<HTMLDivElement | null>(null);
@@ -18,13 +22,10 @@ function StatusBar({
   });
 
   return (
-    <div className='items-center gap-2 hidden relative lg:flex z-[999999]'>
-      <div className='relative' ref={blackListRef}>
-        <HiddenIcons show={showHiddenIcons} />
-      </div>
+    <>
       <div
         ref={handler}
-        onClick={() => setShowHiddenIcons((prev) => !prev)}
+        onClick={toggleHiddenIcons}
         className={`relative before:content-[''] before:-left-1 before:-right-1 before:-top-2 before:-bottom-2 before:bg-hover-color before:absolute before:-z-10 before:rounded-lg p-2 cursor-pointer before:shadow-inner before:shadow-stone-700 me-3 w-14 ${
           showHiddenIcons ? "before:block" : "before:hidden hover:before:block"
         }`}
@@ -41,11 +42,10 @@ function StatusBar({
         className='flex items-center gap-2 relative before:content-[" "] before:-left-4 w-full h-full before:-right-4 before:-top-3 before:-bottom-3 before:bg-hover-color before:absolute before:-z-10 before:rounded-lg before:hidden hover:before:block cursor-pointer  before:shadow-inner before:shadow-stone-700'
       >
         <Network />
-
         <Battery />
       </div>
-      <Time />
-    </div>
+      <Time toggleNotificationPanel={toggleNotificationPanel} />
+    </>
   );
 }
 

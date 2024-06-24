@@ -15,7 +15,7 @@ function ItemsList() {
   }, []);
 
   return (
-    <div className='flex-grow lg:flex-grow-0 px-5 lg:p-0 flex justify-between items-center gap-4 z-50 task-items-list'>
+    <div className='flex-grow w-fit lg:flex-grow-0 px-5 lg:p-0 flex justify-between items-center gap-4 z-50 task-items-list'>
       {/* show start component */}
       {opened && <Start onClose={toggleStart} blackList={startRef.current} />}
 

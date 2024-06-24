@@ -1,10 +1,22 @@
-function HiddenIcons({ show }: { show: boolean }) {
+import useOutsideClick from "@/hooks/useOutsideClick";
+
+type Props = {
+  active: boolean;
+  onClose: () => void;
+  blackList: HTMLDivElement | null;
+};
+
+function HiddenIcons({ active, onClose, blackList }: Props) {
+  const { handler } = useOutsideClick({
+    action: onClose,
+    blackList: [blackList],
+  });
+
   return (
     <div
-      className={`absolute border-[0.25px] border-black rounded-md bg-[#19192a] z-10 backdrop-blur-2xl p-2 -left-24 flex gap-2 flex-wrap 
-    w-[15rem] duration-300 ${
-      show ? "-top-[8.5rem] opacity-100" : "top-10 opacity-0"
-    } 
+      ref={handler}
+      className={`absolute  rounded-md bg-stone-700/90 z-10 backdrop-blur-2xl p-2 right-36 flex gap-2 flex-wrap 
+    w-[15rem] duration-300  ${!active ? "-bottom-96" : "bottom-16"} 
   `}
     >
       <HiddenIconItem imageUrl='https://img.icons8.com/?size=100&id=S0ohn5C86ABc&format=png&color=000000' />

@@ -149,7 +149,7 @@ input[type="range"]:focus {
 /******** Chrome, Safari, Opera and Edge Chromium styles ********/
 /* slider track */
 input[type="range"]::-webkit-slider-runnable-track {
-  background-color: #44403c;
+  background-color: #acaaa7;
   border-radius: 0.5rem;
   height: 3.5px;
 }
