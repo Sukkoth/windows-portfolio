@@ -14,7 +14,7 @@ function TaskBar(props: Props) {
       <div className='w-full md:w-[70%] flex justify-center items-center'>
         <ItemsList />
       </div>
-      <div className='w-fit md:flex items-center gap-2 hidden'>
+      <div className='w-fit md:flex ms-10 items-center gap-2 hidden'>
         <StatusBar {...props} />
       </div>
     </div>
