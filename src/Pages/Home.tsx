@@ -94,7 +94,6 @@ function Home() {
       default:
         setDesktopIconSize("small");
     }
-    console.log("SEETING TO", localSizePreference);
   }, []);
 
   const contextMenuProps = {
