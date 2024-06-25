@@ -18,7 +18,7 @@ function RangeQuickSettings() {
           type='range'
           name='brightness'
           id=''
-          min={0}
+          min={35}
           max={100}
           value={brightness}
           onChange={(e) => setBrightness(parseInt(e.target.value))}
