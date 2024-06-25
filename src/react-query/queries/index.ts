@@ -24,6 +24,6 @@ export function useGetNews() {
   return useQuery({
     queryKey: ["news"],
     queryFn: GET_NEWS,
-    staleTime: 4_000_00,
+    staleTime: 400_000,
   });
 }

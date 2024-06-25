@@ -72,20 +72,23 @@ const Images = withSuspense(
   "explorer"
 );
 
+//these better be loaded at first, since the main layout is
+//already lazily called
+
 //LAYOUTS
-const FolderView = withSuspense(
-  lazy(() => import("@/Layouts/FolderView")),
-  "app"
-);
-const ExplorerView = withSuspense(
-  lazy(() => import("@/components/Explorer/ExplorerView")),
-  "app"
-);
+// const FolderView = withSuspense(
+//   lazy(() => import("@/Layouts/FolderView")),
+//   "app"
+// );
+// const ExplorerView = withSuspense(
+//   lazy(() => import("@/components/Explorer/ExplorerView")),
+//   "app"
+// );
 const Layout = withSuspense(lazy(() => import("@/Layouts/Layout")));
 
 export const LAYOUTS = {
-  FolderView,
-  ExplorerView,
+  // FolderView,
+  // ExplorerView,
   Layout,
 };
 
