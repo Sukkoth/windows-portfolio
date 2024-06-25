@@ -5,9 +5,7 @@ function Header() {
       <p className='font-terminal-header text-2xl py-3'>
         👋 Welcome to terminal.{" "}
       </p> */}
-      <p className='text-sm'>
-        type 'help' to see available commands you can use
-      </p>
+      <p className='text-sm'>type 'help' to see available commands</p>
     </div>
   );
 }
