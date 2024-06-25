@@ -43,7 +43,7 @@ function Weather() {
       <div className='flex flex-col lg:flex-row rounded-2xl w-[98%] mx-auto max-h-full lg:overflow-hidden lg:mt-10'>
         {isLoading || location === null ? (
           <div className='w-full h-[83dvh]'>
-            <Loader />
+            <Loader transparent />
           </div>
         ) : isError ? (
           <div className='w-full h-[83dvh] flex items-center justify-center'>

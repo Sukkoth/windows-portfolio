@@ -11,7 +11,7 @@ function Github() {
       </h1>
       {getRepos.isLoading ? (
         <div className='h-full w-full'>
-          <Loader />
+          <Loader transparent />
         </div>
       ) : (
         <div className='w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 flex-wrap gap-5 mx-auto mt-10 justify-center pb-16'>

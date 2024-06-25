@@ -54,7 +54,7 @@ function Notepad() {
           <p className='font-bold text-lg'>Technologies Used: </p>
           <ul className='list-disc list-inside ml-4 grid sm:grid-cols-2  w-fit gap-1 gap-x-10'>
             {project?.stack?.map((stack) => (
-              <li>{stack}</li>
+              <li key={stack}>{stack}</li>
             ))}
           </ul>
           <p className='font-bold text-lg'> Features:</p>

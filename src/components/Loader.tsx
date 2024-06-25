@@ -1,6 +1,10 @@
-function Loader() {
+function Loader({ transparent = false }: { transparent?: boolean }) {
   return (
-    <div className='w-full h-full flex justify-center items-center bg-stone-800'>
+    <div
+      className={`w-full h-full flex justify-center items-center ${
+        !transparent ? "bg-stone-800" : ""
+      }`}
+    >
       <span className='loader'></span>
     </div>
   );
