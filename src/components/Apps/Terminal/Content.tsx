@@ -14,6 +14,7 @@ import Links from "./Answers/Links";
 import ListFolder from "./Answers/ListFolder";
 import { useTab } from "@/Provider/TabProvider";
 import { parseProjectCommand } from "./Answers/parseProjectCommand";
+import Header from "./Header";
 
 function Content() {
   const commandsHistoryRef = useRef<string[]>(
@@ -25,7 +26,7 @@ function Content() {
   const { toggleTerminal } = useTab();
   const inputRef = useRef<null | HTMLInputElement>(null); //track input field (to focus)
   const [inputText, setInputText] = useState(""); //track user input
-  const [content, setContent] = useState<ReactNode[]>([]); //track what is being displayed
+  const [content, setContent] = useState<ReactNode[]>([<Header />]); //track what is being displayed
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
