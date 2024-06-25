@@ -10,9 +10,7 @@ function Home() {
   const [showMenu, setShowMenu] = useState(false);
   const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
   const [isFullScreen, setIsFullScreen] = useState<boolean>(false);
-  const [desktopIconSize, setDesktopIconSize] = useState<IconSize>(
-    (localStorage.getItem("desktopIconSize") as IconSize) || "small"
-  );
+  const [desktopIconSize, setDesktopIconSize] = useState<IconSize>("small");
 
   //display right click menus
   const handleRightClick = (
@@ -77,6 +75,26 @@ function Home() {
         handleFullScreenChange
       );
     };
+  }, []);
+
+  useEffect(() => {
+    const localSizePreference = JSON.parse(
+      localStorage.getItem("desktopIconSize") || ""
+    );
+    switch (localSizePreference) {
+      case "small":
+        setDesktopIconSize("small");
+        break;
+      case "medium":
+        setDesktopIconSize("medium");
+        break;
+      case "large":
+        setDesktopIconSize("large");
+        break;
+      default:
+        setDesktopIconSize("small");
+    }
+    console.log("SEETING TO", localSizePreference);
   }, []);
 
   const contextMenuProps = {
