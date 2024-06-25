@@ -78,9 +78,10 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    const localSizePreference = JSON.parse(
-      localStorage.getItem("desktopIconSize") || ""
-    );
+    const localData = localStorage.getItem("desktopIconSize");
+    const localSizePreference: string = localData
+      ? JSON.parse(localData)
+      : "small";
     switch (localSizePreference) {
       case "small":
         setDesktopIconSize("small");
