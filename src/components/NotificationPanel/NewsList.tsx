@@ -4,11 +4,16 @@ import NewsItem from "./NewsItem";
 function NewsList() {
   const { data, refetch, isLoading, isError } = useGetNews();
   return (
-    <div className='max-h-[40dvh] overflow-y-scroll'>
+    <div className='max-h-[40dvh] overflow-y-scroll mb-3'>
       {!isLoading && data && data.length > 0 ? (
-        data?.map((article, index) => (
-          <NewsItem key={index} article={article} />
-        ))
+        <>
+          <h1 className='bg-stone-700/90 text-center font-medium tracking-wider rounded-md mb-2 z-[9999] p-3'>
+            Latest Tech News
+          </h1>
+          {data?.map((article, index) => (
+            <NewsItem key={index} article={article} />
+          ))}
+        </>
       ) : (
         <div className='mb-4 bg-stone-700/90 rounded-md z-[9999] font-extralight text-xs p-3 flex justify-between'>
           {isLoading && <p>Loading . . .</p>}

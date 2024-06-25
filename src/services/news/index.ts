@@ -5,13 +5,9 @@ export default async function GET_NEWS(): Promise<Article[] | null> {
   if (!token) {
     throw "No token provided";
   }
+
   const response = await fetch(
-    `https://newsapi.org/v2/top-headlines?country=us&category=technology&pageSize=10&page=1`,
-    {
-      headers: {
-        "X-Api-Key": token,
-      },
-    }
+    `https://api.currentsapi.services/v1/search?language=en&country=us&category=technology&apiKey=36EQkOo-zTos5oJ9AQSQEUUCkDyzvjSaOx5lvmsiZ9JNU9B4`
   );
   const data: ResponseType = await response.json();
 
@@ -19,5 +15,5 @@ export default async function GET_NEWS(): Promise<Article[] | null> {
     throw "Could not fetch news";
   }
 
-  return data?.articles as Article[];
+  return data?.news as Article[];
 }

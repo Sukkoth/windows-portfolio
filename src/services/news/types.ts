@@ -1,21 +1,17 @@
-interface Source {
-  id: string | null;
-  name: string;
-}
-
 export interface Article {
-  source: Source;
-  author: string;
+  id: string;
   title: string;
   description: string;
   url: string;
-  urlToImage: string;
-  publishedAt: string;
-  content: string;
+  author: string;
+  image: string | null;
+  language: string;
+  category: string[];
+  published: string;
 }
 
 export interface ResponseType {
   status: string;
-  totalResults: number;
-  articles: Article[];
+  page: number;
+  news: Article[];
 }
