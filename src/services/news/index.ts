@@ -7,7 +7,7 @@ export default async function GET_NEWS(): Promise<Article[] | null> {
   }
 
   const response = await fetch(
-    `https://api.currentsapi.services/v1/search?language=en&country=us&category=technology&apiKey=36EQkOo-zTos5oJ9AQSQEUUCkDyzvjSaOx5lvmsiZ9JNU9B4`
+    `https://api.currentsapi.services/v1/search?language=en&country=us&category=technology&apiKey=${token}`
   );
   const data: ResponseType = await response.json();
 
