@@ -1,5 +1,4 @@
 import { useTab } from "@/Provider/TabProvider";
-import { memo } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 type Props = { imgUrl: string; to: string; explorer?: boolean };
@@ -19,6 +18,7 @@ function TaskbarItem({ imgUrl, to, explorer = false }: Props) {
 
   return (
     <Link
+      title={to.split("/").at(-1)}
       onClick={() => toggleTerminal(false)}
       {...redirectProps}
       className={`task-item ${
@@ -32,5 +32,4 @@ function TaskbarItem({ imgUrl, to, explorer = false }: Props) {
   );
 }
 
-const MemoizedTaskbarItem = memo(TaskbarItem);
-export default MemoizedTaskbarItem;
+export default TaskbarItem;

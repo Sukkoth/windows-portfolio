@@ -4,7 +4,9 @@ import StatusBar from "./StatusBar";
 type Props = {
   toggleQuickSettings: () => void;
   toggleNotificationPanel: () => void;
-  toggleHiddenIcons: () => void;
+  // eslint-disable-next-line no-unused-vars
+  toggleHiddenIcons: (status?: boolean) => void;
+  showingHiddenIcons: boolean;
 };
 
 function TaskBar(props: Props) {

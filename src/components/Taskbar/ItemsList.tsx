@@ -23,6 +23,7 @@ function ItemsList() {
         onClick={() => setOpened((prev) => !prev)}
         ref={startRef}
         className='task-item'
+        title='start'
       >
         <img
           className='size-8'
@@ -49,6 +50,7 @@ function ItemsList() {
       <div
         onClick={() => toggleTerminal(!showTerminal)}
         className={`task-item ${showTerminal ? "active" : ""}`}
+        title='terminal'
       >
         <img
           className='size-8'

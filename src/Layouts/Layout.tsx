@@ -37,8 +37,11 @@ function Layout() {
     });
   }, []);
 
-  const toggleHiddenIcons = useCallback(() => {
+  const toggleHiddenIcons = useCallback((state?: boolean) => {
     setShowHiddenIcons((prev) => {
+      if (state === false) {
+        return false;
+      }
       if (prev === false) {
         setShowQuickSettings(false);
         setShowNotificationPanel(false);
@@ -46,6 +49,13 @@ function Layout() {
       return !prev;
     });
   }, []);
+
+  const taskBarProps = {
+    toggleQuickSettings: toggleQuickSettings,
+    toggleNotificationPanel: toggleNotificationPanel,
+    toggleHiddenIcons: toggleHiddenIcons,
+    showingHiddenIcons: showHiddenIcons,
+  };
 
   if (asleep) {
     return (
@@ -61,11 +71,7 @@ function Layout() {
         <Outlet />
       </div>
       <div ref={taskBarRef}>
-        <TaskBar
-          toggleQuickSettings={toggleQuickSettings}
-          toggleNotificationPanel={toggleNotificationPanel}
-          toggleHiddenIcons={toggleHiddenIcons}
-        />
+        <TaskBar {...taskBarProps} />
       </div>
 
       <QuickSettings

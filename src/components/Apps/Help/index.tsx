@@ -71,6 +71,41 @@ function Help() {
           (ofcourse unless you clear it using dev tools 🙃)
         </span>
       </p>
+      <p className='text-lg mt-5 font-bold'>⚡ Terminal app</p>
+      <p>
+        This is a simple terminal which is crafted to serve as a simple
+        portfolio
+      </p>
+      <p>You can bring it up usin the terminal icon on the taskbar</p>
+      <p>Available commands on the terminal are: </p>
+      <ul className='list-inside list-disc'>
+        <li>
+          <strong>about</strong>: Provides information about the developer,
+        </li>
+        <li>
+          <strong>help</strong>: Lists all available commands and their
+          descriptions.,
+        </li>
+        <li>
+          <strong>skills</strong>: Displays a list of skills.,
+        </li>
+        <li>
+          <strong>tools</strong>: Displays a list of tools used.,
+        </li>
+        <li>
+          <strong>links</strong>: Provides relevant links related to the
+          developer,
+        </li>
+        <li>
+          <strong>project</strong>: Displays a list of projects.,
+        </li>
+        <li>
+          <strong>clear</strong>: Clears the terminal or console screen.,
+        </li>
+        <li>
+          <strong>exit</strong>: Exits the application.,
+        </li>
+      </ul>
       <p className='text-lg mt-5 font-bold'>⚡ Explorer app</p>
       <p>
         This app has many functionalities. You can view projects I have
@@ -151,6 +186,30 @@ function Help() {
       <p>
         Do I seriously need to explain what this does? You are here already. 🤣
       </p>
+
+      <p className='text-lg mt-5 font-bold'>⚡ StackBlitz app</p>
+      <p>
+        This is antegrated environment where you can mess around with node
+        porjects.
+      </p>
+      <p>
+        You can edit your codes here. Just open the index.js, put some code in
+        it, open up the terminal and run your file using <code>node index</code>
+      </p>
+      <p>🎯 TaskBar</p>
+      <p>
+        Apart from these, there is a visible taskbar at the bottom (🤭
+        obviously).
+      </p>
+      <p>It has taskbar items list and also the status</p>
+      <p>✅ The Status bar</p>
+      <p>This consists of 3 parts. They are</p>
+      <ul className='list-inside list-disc'>
+        <li>Hidden Icon</li>
+        <li>Quick Settings</li>
+        <li>Notification Panel</li>
+      </ul>
+      <p>You can click on each them and take a look at their features.</p>
     </div>
   );
 }

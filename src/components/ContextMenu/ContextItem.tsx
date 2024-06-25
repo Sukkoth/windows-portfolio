@@ -19,7 +19,7 @@ function ContextItem({
       onClick={onClick}
     >
       {icon && <img src={icon} className='size-5' />}
-      <p>{children}</p>
+      <div>{children}</div>
     </div>
   );
 }

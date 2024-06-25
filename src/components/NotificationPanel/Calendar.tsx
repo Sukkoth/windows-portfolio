@@ -70,12 +70,12 @@ function Calendar() {
             (_, index) => (
               <p
                 key={index}
-                className={`p-1 py-2 rounded-full ${
+                className={`p-2 border border-transparent rounded-full ${
                   dateToShow.month === today.getMonth() + 1 &&
                   dateToShow.year === today.getFullYear() &&
                   today.getDate() === index + 2 - dayIndex
-                    ? "bg-stone-800 border border-white"
-                    : ""
+                    ? "bg-stone-800 border-blue-500"
+                    : " hover:border-white"
                 } text-center ${index < dayIndex - 1 ? "text-gray-500" : ""}`}
               >
                 {index < dayIndex - 1
