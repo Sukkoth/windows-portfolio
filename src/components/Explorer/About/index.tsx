@@ -1,5 +1,6 @@
 import { links } from "../Links/links";
 import AccordionList from "./AccordionList";
+import aboutPic from "../../../../public/assets/about-pic.jpg";
 
 function About() {
   return (
@@ -7,7 +8,7 @@ function About() {
       <div>
         <img
           className='border-[0.5px] md:mt-7 border-stone-600 md:h-5/6 w-3/4 sm:w-2/4 md:w-[70%] mx-auto object-cover rounded-full md:rounded-xl md:max-h-[35rem]'
-          src='https://media.licdn.com/dms/image/D4E03AQEj-8L526_MEA/profile-displayphoto-shrink_800_800/0/1669385084111?e=1723680000&v=beta&t=eWEnoUPK6oHN3Gkxv__7GaC6j0pEIyIpR3PrWjp38Yk'
+          src={aboutPic}
           alt='profile'
         />
         <p className='text-center pt-5 text-lg font-medium md:text-xl'>
