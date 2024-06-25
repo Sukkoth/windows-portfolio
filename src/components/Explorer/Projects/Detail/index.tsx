@@ -42,7 +42,6 @@ function Detail() {
                 backTo: location.pathname,
                 replace: true,
               },
-              replace: true,
             })
           }
         >
