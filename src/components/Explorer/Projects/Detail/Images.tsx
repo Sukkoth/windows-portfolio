@@ -30,6 +30,7 @@ function Images() {
                     pictureIndex: index,
                     projectId: parseInt(projectId || "0"),
                     backTo: location.pathname,
+                    replace: true,
                   },
                 })
               }

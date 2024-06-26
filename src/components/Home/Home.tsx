@@ -1,7 +1,7 @@
 import ContextMenu from "@/components/ContextMenu";
 import Day from "@/components/Day";
 import { useEffect, useState } from "react";
-import DesktopIcons from "@/Pages/DesktopIcons";
+import DesktopIcons from "@/components/Home/DesktopIcons";
 
 type IconSize = "small" | "medium" | "large";
 

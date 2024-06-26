@@ -2,7 +2,7 @@ import { lazy } from "react";
 import withSuspense from "./withSuspense";
 
 export const Home = withSuspense(
-  lazy(() => import("@/Pages/Home")),
+  lazy(() => import("@/components/Home/Home")),
   "app"
 );
 
