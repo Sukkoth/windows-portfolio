@@ -1,6 +1,6 @@
 import { links } from "../Links/links";
 import AccordionList from "./AccordionList";
-import aboutPic from "/assets/avatarresi.png";
+import aboutPic from "/assets/about-pic.jpg";
 
 function About() {
   return (
