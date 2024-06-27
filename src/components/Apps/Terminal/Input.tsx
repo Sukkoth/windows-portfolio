@@ -1,4 +1,4 @@
-import { SetStateAction } from "jotai";
+import { SetStateAction } from "react";
 import { Dispatch, FormEvent, useEffect } from "react";
 
 type InputProps = {
