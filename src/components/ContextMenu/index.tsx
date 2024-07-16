@@ -27,7 +27,7 @@ function ContextMenu({
         <ContextItem
           groupId='view'
           icon={
-            "https://img.icons8.com/?size=120&id=AZOZNnY73haj&format=png&color=000000"
+            "https://img.icons8.com/?size=100&id=93002&format=png&color=ffffff"
           }
         >
           <div className='flex items-center'>
