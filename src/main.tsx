@@ -6,6 +6,7 @@ import TabProvider from "./Provider/TabProvider.tsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { BrowserRouter } from "react-router-dom";
+import LogLib from "@loglib/tracker/react";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,6 +23,11 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <App />
+          <LogLib
+            config={{
+              id: "gadisa",
+            }}
+          />
           <ReactQueryDevtools />
         </BrowserRouter>
       </QueryClientProvider>

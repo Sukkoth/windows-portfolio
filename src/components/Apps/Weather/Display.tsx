@@ -4,15 +4,22 @@ import { Weather } from "@/services/weather/types";
 
 type Props = {
   weather: Weather;
+  useDefaultLocation: boolean;
 };
 
-function Display({ weather }: Props) {
+function Display({ weather, useDefaultLocation }: Props) {
   return (
     <div className='lg:w-3/4 bg-stone-800/60 p-5 text-center'>
       <div className='flex flex-col lg:flex-row justify-between items-center px-10'>
         <h1 className='text-2xl'>
           {weather.location.name}, {weather.location.country}
+          {useDefaultLocation && (
+            <span className='font-mono text-xs ml-4 text-yellow-500 block'>
+              (Location denied: Using default location Addis Ababa)
+            </span>
+          )}
         </h1>
+
         <h1 className='text-2xl text-stone-400'>{getFormattedDate()}</h1>
       </div>
       <div className='flex justify-center items-center mt-5 lg:mt-10 mb-0'>

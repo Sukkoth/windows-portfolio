@@ -4,6 +4,7 @@ import { languages, startItems } from "./data";
 import ContextItem from "../ContextMenu/ContextItem";
 import { useState } from "react";
 import { useTab } from "@/Provider/TabProvider";
+import { useNavigate } from "react-router-dom";
 
 function Start({
   onClose,
@@ -12,6 +13,8 @@ function Start({
   onClose: () => void;
   blackList: HTMLDivElement | null;
 }) {
+  const navigate = useNavigate();
+
   const { handler } = useOutsideClick({
     action: onClose,
     blackList: [blackList],
@@ -30,9 +33,9 @@ function Start({
   return (
     <div
       ref={handler}
-      className='absolute bottom-16 lg:left-[calc(50%-17rem)] rounded-lg  border-2 border-stone-700 bg-stone-800/70 backdrop-blur-2xl overflow-hidden  sm-only:mx-1 sm-only:inset-x-0 sm:size-[35rem] md:size[40rem]'
+      className='absolute bottom-[70px] lg:left-[calc(50%-17rem)] rounded-lg  border-2 border-stone-700 bg-stone-800/95 backdrop-blur-2xl overflow-hidden  sm-only:mx-1 sm-only:inset-x-0 sm:size-[35rem] md:size[40rem]'
     >
-      <div className='p-2 sm-only:pb-16 h-[90%] max-h-[40rem] overflow-y-scroll scrollbar-hide'>
+      <div className='p-2 pb-14 lg:pb-40 sm-only:h-[70dvh] max-h-[40rem] overflow-y-scroll scrollbar-hide '>
         <p className='pl-1 text-sm'>Skills</p>
         <div className='grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-6 mt-2 '>
           {languages.map((item) => (
@@ -57,7 +60,8 @@ function Start({
       <div className='bg-stone-700 w-full flex items-center absolute bottom-0 justify-between py-3 px-5'>
         <div
           onClick={() => {
-            window.open("https://t.me/sukkoth", "_blank");
+            navigate("/explorer/about");
+            onClose();
           }}
           className='relative flex items-center gap-2 text-sm cursor-pointer before:content-[""] before:-inset-2 before:absolute before:bg-stone-800/60 before:hidden before:hover:block before:-z-50 z-10 before:rounded-lg'
         >

@@ -22,7 +22,7 @@ function Projects() {
         </Row>
 
         {projects.map((project) => (
-          <div onDoubleClick={() => navigate(`2`)} key={project.id}>
+          <div onDoubleClick={() => navigate(`${project.id}`)} key={project.id}>
             <Row
               key={project.id}
               gridClass='grid-cols-[3fr_1fr_repeat(4,_1fr)]'

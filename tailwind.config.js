@@ -4,10 +4,8 @@ export default {
   theme: {
     extend: {
       screens: {
+        xs: "412px",
         "sm-only": { max: "639px" },
-        xs: {
-          min: "420px",
-        },
       },
       gridTemplateColumns: {
         folder: "3fr 1fr repeat(3, 1fr)",
@@ -16,9 +14,11 @@ export default {
         "hover-color": "#303032",
       },
       fontFamily: {
-        anurati: ["Anurati", "sans-serif"],
-        "open-sans": ["Open Sans", "sans-serif"],
-        dmSans: ["DM Sans", "sans-serif"],
+        anurati: ["Anurati", "sans-serif"], //day font
+        firacode: ["Fira Code", "monospace"], //terminal font
+        segoe: ["Segoe UI Variable Static Small", "sans-serif"], //body font
+        "time-font": ["Orbitron", "sans-serif"], //time under day font
+        "terminal-header": ["Bungee Spice", "sans-serif"], //terminal header font
       },
     },
   },
@@ -41,6 +41,18 @@ export default {
         },
       };
       addUtilities(newUtilities, ["hover"]);
+    },
+    function ({ addUtilities }) {
+      const newUtilities = {
+        // width: 0;
+        // height: 0;
+        ".triangle-left": {
+          borderTop: "15px solid transparent",
+          borderBottom: "15px solid transparent",
+          borderLeft: "15px solid",
+        },
+      };
+      addUtilities(newUtilities, ["div"]);
     },
   ],
 };
